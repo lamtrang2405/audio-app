@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Hush</title>
+    <meta name="description" content="Hush — Your secret escape. Premium intimate audio stories.">
+    <meta name="theme-color" content="#070d10">
+    <link rel="stylesheet" href="hush_app.css">
+</head>
+
+<body>
+
+    <!-- ╔══════════════════════════════════════╗
+         ║        SCREEN 1: HOME                ║
+         ╚══════════════════════════════════════╝ -->
+    <div id="screen-home" class="screen active">
+
+        <!-- Header -->
+        <header class="hdr">
+            <div class="hdr-brand">
+                <div class="hdr-logo">h</div>
+                <span class="hdr-wordmark">hush</span>
+            </div>
+            <div class="hdr-actions">
+                <button class="hdr-icon-btn" aria-label="Notifications">
+                    <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                    <span class="notif-badge"></span>
+                </button>
+                <div class="hdr-avatar" onclick="navigateTo('profile')">
+                    <span>S</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Greeting -->
+        <div class="greeting-block">
+            <p class="greeting-label" id="greeting-label">Good evening,</p>
+            <h1 class="greeting-name">Sofia</h1>
+        </div>
+
+        <!-- Vibe Selector -->
+        <div class="vibe-selector">
+            <div class="vibe-pill active" data-vibe="all">All</div>
+            <div class="vibe-pill" data-vibe="passionate">Passionate</div>
+            <div class="vibe-pill" data-vibe="romantic">Romantic</div>
+            <div class="vibe-pill" data-vibe="taboo">Taboo</div>
+            <div class="vibe-pill" data-vibe="asmr">ASMR</div>
+            <div class="vibe-pill" data-vibe="dreamy">Dreamy</div>
+            <div class="vibe-pill" data-vibe="rough">Rough</div>
+        </div>
+
+        <!-- Featured Story (Editorial Hero) -->
+        <div class="editorial-hero" onclick="openStoryDetail('neighbor')">
+            <div class="eh-gradient"></div>
+            <div class="eh-content">
+                <div class="eh-eyebrow">Editor's Pick</div>
+                <h2 class="eh-title">The Neighbor<br>Upstairs</h2>
+                <p class="eh-sub">Thin walls. Thick tension. 8 episodes of forbidden proximity.</p>
+                <div class="eh-cta">
+                    <div class="eh-play-icon">
+                        <svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg>
+                    </div>
+                    <span>Start Listening</span>
+                </div>
+            </div>
+            <div class="eh-live">
+                <span class="live-dot"></span>
+                <span>3.1K listening</span>
+            </div>
+        </div>
+
+        <!-- Continue -->
+        <section class="sec">
+            <div class="sec-head">
+                <h2>Pick up where you left</h2>
+                <span class="sec-more">See all</span>
+            </div>
+            <div class="h-rail">
+                <div class="resume-card anim-in" onclick="openStoryDetail('neighbor')">
+                    <div class="rc-art" style="background: linear-gradient(135deg,#0c2e3a,#164050)">
+                        <div class="rc-play"><svg viewBox="0 0 24 24"><polygon points="7,4 19,12 7,20"/></svg></div>
+                    </div>
+                    <div class="rc-bar"><div class="rc-fill" style="width:62%"></div></div>
+                    <div class="rc-text">
+                        <span class="rc-name">The Neighbor Upstairs</span>
+                        <span class="rc-ep">Ep 3 &bull; 9m left</span>
+                    </div>
+                </div>
+                <div class="resume-card anim-in" onclick="openStoryDetail('professor')">
+                    <div class="rc-art" style="background: linear-gradient(135deg,#2a1430,#3d1e45)">
+                        <div class="rc-play"><svg viewBox="0 0 24 24"><polygon points="7,4 19,12 7,20"/></svg></div>
+                    </div>
+                    <div class="rc-bar"><div class="rc-fill" style="width:28%"></div></div>
+                    <div class="rc-text">
+                        <span class="rc-name">Office Hours</span>
+                        <span class="rc-ep">Ep 1 &bull; 20m left</span>
+                    </div>
+                </div>
+                <div class="resume-card anim-in" onclick="openStoryDetail('barista')">
+                    <div class="rc-art" style="background: linear-gradient(135deg,#2a2008,#3d3010)">
+                        <div class="rc-play"><svg viewBox="0 0 24 24"><polygon points="7,4 19,12 7,20"/></svg></div>
+                    </div>
+                    <div class="rc-bar"><div class="rc-fill" style="width:100%"></div></div>
+                    <div class="rc-text">
+                        <span class="rc-name">The Barista</span>
+                        <span class="rc-ep">Complete &bull; Replay</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trending -->
+        <section class="sec">
+            <div class="sec-head">
+                <h2>Trending</h2>
+                <span class="sec-more">See all</span>
+            </div>
+            <div class="h-rail">
+                <div class="poster-card anim-in" onclick="openStoryDetail('neighbor')">
+                    <div class="pc-img" style="background:linear-gradient(160deg,#0c2e3a,#164050,#0c2e3a)">
+                        <div class="pc-badge trend">Hot</div>
+                        <div class="pc-hover-play"><svg viewBox="0 0 24 24"><polygon points="7,4 19,12 7,20"/></svg></div>
+                        <div class="pc-time">3h 28m</div>
+                    </div>
+                    <div class="pc-info">
+                        <div class="pc-title">The Neighbor Upstairs</div>
+                        <div class="pc-sub">Proximity &bull; Forbidden</div>
+                        <div class="pc-hearts"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>6.2K</span></div>
+                    </div>
+                </div>
+                <div class="poster-card anim-in" onclick="openStoryDetail('photographer')">
+                    <div class="pc-img" style="background:linear-gradient(160deg,#1a0a20,#2d1438,#1a0a20)">
+                        <div class="pc-badge vip">VIP</div>
+                        <div class="pc-hover-play"><svg viewBox="0 0 24 24"><polygon points="7,4 19,12 7,20"/></svg></div>
+                        <div class="pc-time">4h 12m</div>
+                    </div>
+                    <div class="pc-info">
+                        <div class="pc-title">The Photographer</div>
+                        <div class="pc-sub">Art &bull; Vulnerable</div>
+                        <div class="pc-hearts"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>4.8K</span></div>
+                    </div>
+                </div>
+                <div class="poster-card anim-in" onclick="openStoryDetail('professor')">
+                    <div class="pc-img" style="background:linear-gradient(160deg,#2a1430,#3d1e45,#2a1430)">
+                        <div class="pc-hover-play"><svg viewBox="0 0 24 24"><polygon points="7,4 19,12 7,20"/></svg></div>
+                        <div class="pc-time">3h 50m</div>
+                    </div>
+                    <div class="pc-info">
+                        <div class="pc-title">Office Hours</div>
+                        <div class="pc-sub">Professor &bull; Tension</div>
+                        <div class="pc-hearts"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>3.5K</span></div>
+                    </div>
+                </div>
+                <div class="poster-card anim-in" onclick="openStoryDetail('dancer')">
+                    <div class="pc-img" style="background:linear-gradient(160deg,#200a14,#381020,#200a14)">
+                        <div class="pc-badge fresh">New</div>
+                        <div class="pc-hover-play"><svg viewBox="0 0 24 24"><polygon points="7,4 19,12 7,20"/></svg></div>
+                        <div class="pc-time">2h 40m</div>
+                    </div>
+                    <div class="pc-info">
+                        <div class="pc-title">After the Show</div>
+                        <div class="pc-sub">Dancer &bull; Passionate</div>
+                        <div class="pc-hearts"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>2.1K</span></div>
+                    </div>
+                </div>
+                <div class="poster-card anim-in" onclick="openStoryDetail('barista')">
+                    <div class="pc-img" style="background:linear-gradient(160deg,#2a2008,#3d3010,#2a2008)">
+                        <div class="pc-hover-play"><svg viewBox="0 0 24 24"><polygon points="7,4 19,12 7,20"/></svg></div>
+                        <div class="pc-time">2h 15m</div>
+                    </div>
+                    <div class="pc-info">
+                        <div class="pc-title">The Barista</div>
+                        <div class="pc-sub">Coffee Shop &bull; Sweet</div>
+                        <div class="pc-hearts"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>5.4K</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- For You (Editorial Layout) -->
+        <section class="sec">
+            <div class="sec-head">
+                <h2>For You</h2>
+                <span class="sec-more">See all</span>
+            </div>
+            <div class="editorial-grid">
+                <div class="eg-card eg-wide anim-in" onclick="openStoryDetail('lifeguard')">
+                    <div class="eg-bg" style="background:linear-gradient(135deg,#0a2030,#143848)"></div>
+                    <div class="eg-body">
+                        <div class="eg-label">Recommended</div>
+                        <div class="eg-name">Lifeguard Summer</div>
+                        <div class="eg-meta">6 Eps &bull; Beach &bull; Playful</div>
+                    </div>
+                </div>
+                <div class="eg-card anim-in" onclick="openStoryDetail('chef')">
+                    <div class="eg-bg" style="background:linear-gradient(135deg,#2a1508,#402010)"></div>
+                    <div class="eg-body">
+                        <div class="eg-name">Private Chef</div>
+                        <div class="eg-meta">Sensual &bull; Cooking</div>
+                    </div>
+                </div>
+                <div class="eg-card anim-in" onclick="openStoryDetail('penpal')">
+                    <div class="eg-bg" style="background:linear-gradient(135deg,#0a0a28,#141440)"></div>
+                    <div class="eg-body">
+                        <div class="eg-name">Dear Pen Pal</div>
+                        <div class="eg-meta">Letters &bull; Longing</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Voices -->
+        <section class="sec">
+            <div class="sec-head">
+                <h2>Popular Voices</h2>
+                <span class="sec-more">See all</span>
+            </div>
+            <div class="voice-list">
+                <div class="voice-row anim-in">
+                    <div class="vr-ring" style="background:linear-gradient(135deg,#f472b6,#7c3aed)"><span>C</span></div>
+                    <div class="vr-info"><div class="vr-name">Caleb Storm</div><div class="vr-desc">Deep &bull; Commanding</div></div>
+                    <div class="vr-wave"><span></span><span></span><span></span><span></span><span></span></div>
+                </div>
+                <div class="voice-row anim-in">
+                    <div class="vr-ring" style="background:linear-gradient(135deg,#06b6d4,#3b82f6)"><span>N</span></div>
+                    <div class="vr-info"><div class="vr-name">Nico Voss</div><div class="vr-desc">Warm &bull; Playful</div></div>
+                    <div class="vr-wave"><span></span><span></span><span></span><span></span><span></span></div>
+                </div>
+                <div class="voice-row anim-in">
+                    <div class="vr-ring" style="background:linear-gradient(135deg,#fbbf24,#f472b6)"><span>J</span></div>
+                    <div class="vr-info"><div class="vr-name">Jade Ellis</div><div class="vr-desc">Sultry &bull; ASMR</div></div>
+                    <div class="vr-wave"><span></span><span></span><span></span><span></span><span></span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sleep Section -->
+        <section class="sec">
+            <div class="sec-head">
+                <h2>Wind Down</h2>
+                <span class="sec-more">See all</span>
+            </div>
+            <div class="h-rail">
+                <div class="sleep-tile anim-in" onclick="openStoryDetail('whisper-rain')">
+                    <div class="st-art" style="background:linear-gradient(180deg,#070d18,#0a1428)">
+                        <div class="st-emoji">&#127769;</div>
+                    </div>
+                    <div class="st-name">Whisper & Rain</div>
+                    <div class="st-tag">ASMR &bull; Sleep</div>
+                </div>
+                <div class="sleep-tile anim-in" onclick="openStoryDetail('goodnight')">
+                    <div class="st-art" style="background:linear-gradient(180deg,#100a1e,#1a1030)">
+                        <div class="st-emoji">&#128156;</div>
+                    </div>
+                    <div class="st-name">Goodnight, Love</div>
+                    <div class="st-tag">Comfort &bull; Gentle</div>
+                </div>
+                <div class="sleep-tile anim-in" onclick="openStoryDetail('cabin-night')">
+                    <div class="st-art" style="background:linear-gradient(180deg,#0d1008,#1a2010)">
+                        <div class="st-emoji">&#127956;&#65039;</div>
+                    </div>
+                    <div class="st-name">Cabin Nights</div>
+                    <div class="st-tag">Fireplace &bull; Cozy</div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+
+    <!-- ╔══════════════════════════════════════╗
+         ║        SCREEN 2: EXPLORE             ║
+         ╚══════════════════════════════════════╝ -->
+    <div id="screen-explore" class="screen">
+        <div class="explore-top">
+            <h1>Explore</h1>
+            <div class="search-field">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <input type="text" placeholder="Stories, voices, vibes...">
+            </div>
+        </div>
+
+        <section class="sec" style="margin-top:0.25rem">
+            <div class="sec-head"><h2>Browse Vibes</h2></div>
+            <div class="vibe-tiles">
+                <div class="vt" style="--vt-bg:linear-gradient(135deg,#f472b6,#be185d)"><div class="vt-icon">&#128293;</div><div class="vt-label">Passionate</div><div class="vt-count">128</div></div>
+                <div class="vt" style="--vt-bg:linear-gradient(135deg,#06b6d4,#0e7490)"><div class="vt-icon">&#127769;</div><div class="vt-label">Late Night</div><div class="vt-count">94</div></div>
+                <div class="vt" style="--vt-bg:linear-gradient(135deg,#7c3aed,#5b21b6)"><div class="vt-icon">&#128156;</div><div class="vt-label">Romantic</div><div class="vt-count">112</div></div>
+                <div class="vt" style="--vt-bg:linear-gradient(135deg,#fbbf24,#d97706)"><div class="vt-icon">&#9939;&#65039;</div><div class="vt-label">Dominant</div><div class="vt-count">67</div></div>
+                <div class="vt" style="--vt-bg:linear-gradient(135deg,#10b981,#059669)"><div class="vt-icon">&#128154;</div><div class="vt-label">Comfort</div><div class="vt-count">85</div></div>
+                <div class="vt" style="--vt-bg:linear-gradient(135deg,#ef4444,#b91c1c)"><div class="vt-icon">&#128520;</div><div class="vt-label">Taboo</div><div class="vt-count">53</div></div>
+            </div>
+        </section>
+
+        <section class="sec">
+            <div class="sec-head"><h2>Popular Voices</h2><span class="sec-more">See all</span></div>
+            <div class="h-rail voice-avatars-rail">
+                <div class="va-card"><div class="va-ring" style="background:linear-gradient(135deg,#f472b6,#7c3aed)"><span>C</span></div><div class="va-label">Caleb</div><div class="va-type">Deep</div></div>
+                <div class="va-card"><div class="va-ring" style="background:linear-gradient(135deg,#06b6d4,#3b82f6)"><span>N</span></div><div class="va-label">Nico</div><div class="va-type">Warm</div></div>
+                <div class="va-card"><div class="va-ring" style="background:linear-gradient(135deg,#fbbf24,#f472b6)"><span>J</span></div><div class="va-label">Jade</div><div class="va-type">Sultry</div></div>
+                <div class="va-card"><div class="va-ring" style="background:linear-gradient(135deg,#10b981,#06b6d4)"><span>L</span></div><div class="va-label">Leo</div><div class="va-type">Gentle</div></div>
+                <div class="va-card"><div class="va-ring" style="background:linear-gradient(135deg,#ef4444,#fbbf24)"><span>A</span></div><div class="va-label">Aria</div><div class="va-type">Breathy</div></div>
+            </div>
+        </section>
+
+        <section class="sec">
+            <div class="sec-head"><h2>Trending Tags</h2></div>
+            <div class="tags-wrap">
+                <span class="tag hot-tag">#enemiestolovers</span><span class="tag">#softdom</span><span class="tag hot-tag">#possessive</span>
+                <span class="tag">#aftercare</span><span class="tag">#jealousy</span><span class="tag hot-tag">#firsttime</span>
+                <span class="tag">#fakerelationship</span><span class="tag">#roommates</span><span class="tag">#praising</span>
+                <span class="tag">#forbiddenlove</span><span class="tag">#bodyworshipping</span><span class="tag">#voyeuristic</span>
+            </div>
+        </section>
+
+        <section class="sec">
+            <div class="sec-head"><h2>Top This Week</h2></div>
+            <div class="ranking-list">
+                <div class="rank-row anim-in" onclick="openStoryDetail('neighbor')"><div class="rank-num">#1</div><div class="rank-art" style="background:linear-gradient(135deg,#0c2e3a,#164050)"></div><div class="rank-info"><div class="rank-title">The Neighbor Upstairs</div><div class="rank-meta">8 Eps &bull; Forbidden</div></div><div class="rank-up"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg></div></div>
+                <div class="rank-row anim-in" onclick="openStoryDetail('barista')"><div class="rank-num">#2</div><div class="rank-art" style="background:linear-gradient(135deg,#2a2008,#3d3010)"></div><div class="rank-info"><div class="rank-title">The Barista</div><div class="rank-meta">6 Eps &bull; Sweet</div></div><div class="rank-up"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg></div></div>
+                <div class="rank-row anim-in" onclick="openStoryDetail('photographer')"><div class="rank-num">#3</div><div class="rank-art" style="background:linear-gradient(135deg,#1a0a20,#2d1438)"></div><div class="rank-info"><div class="rank-title">The Photographer</div><div class="rank-meta">10 Eps &bull; Art</div></div><div class="rank-up"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg></div></div>
+            </div>
+        </section>
+    </div>
+
+
+    <!-- ╔══════════════════════════════════════╗
+         ║        SCREEN 3: LIBRARY             ║
+         ╚══════════════════════════════════════╝ -->
+    <div id="screen-library" class="screen">
+        <div class="lib-top">
+            <h1>Library</h1>
+        </div>
+        <div class="lib-tabs">
+            <div class="lt active" data-tab="saved">Saved</div>
+            <div class="lt" data-tab="downloaded">Downloaded</div>
+            <div class="lt" data-tab="history">History</div>
+        </div>
+
+        <div id="lib-saved" class="lib-tab-body active">
+            <div class="lib-row" onclick="openStoryDetail('neighbor')"><div class="lr-art" style="background:linear-gradient(135deg,#0c2e3a,#164050)"></div><div class="lr-info"><div class="lr-title">The Neighbor Upstairs</div><div class="lr-meta">8 Eps &bull; Ep 3</div><div class="lr-prog"><div class="lr-fill" style="width:38%"></div></div></div><button class="lr-more"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg></button></div>
+            <div class="lib-row" onclick="openStoryDetail('photographer')"><div class="lr-art" style="background:linear-gradient(135deg,#1a0a20,#2d1438)"></div><div class="lr-info"><div class="lr-title">The Photographer</div><div class="lr-meta">10 Eps &bull; Art</div><div class="lr-prog"><div class="lr-fill" style="width:0%"></div></div></div><button class="lr-more"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg></button></div>
+            <div class="lib-row" onclick="openStoryDetail('professor')"><div class="lr-art" style="background:linear-gradient(135deg,#2a1430,#3d1e45)"></div><div class="lr-info"><div class="lr-title">Office Hours</div><div class="lr-meta">9 Eps &bull; Professor</div><div class="lr-prog"><div class="lr-fill" style="width:11%"></div></div></div><button class="lr-more"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg></button></div>
+            <div class="lib-row" onclick="openStoryDetail('barista')"><div class="lr-art" style="background:linear-gradient(135deg,#2a2008,#3d3010)"></div><div class="lr-info"><div class="lr-title">The Barista</div><div class="lr-meta">6 Eps &bull; Complete</div><div class="lr-prog"><div class="lr-fill" style="width:100%"></div></div></div><button class="lr-more"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg></button></div>
+        </div>
+        <div id="lib-downloaded" class="lib-tab-body" style="display:none">
+            <div class="lib-row" onclick="openStoryDetail('neighbor')"><div class="lr-art" style="background:linear-gradient(135deg,#0c2e3a,#164050)"><div class="lr-dl-badge"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div></div><div class="lr-info"><div class="lr-title">The Neighbor Upstairs</div><div class="lr-meta">Eps 1-3 &bull; 38 MB</div></div><button class="lr-more"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg></button></div>
+        </div>
+        <div id="lib-history" class="lib-tab-body" style="display:none">
+            <div class="lib-row" onclick="openStoryDetail('barista')"><div class="lr-art" style="background:linear-gradient(135deg,#2a2008,#3d3010)"></div><div class="lr-info"><div class="lr-title">The Barista</div><div class="lr-meta">Finished today</div></div><button class="lr-more"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg></button></div>
+            <div class="lib-row" onclick="openStoryDetail('neighbor')"><div class="lr-art" style="background:linear-gradient(135deg,#0c2e3a,#164050)"></div><div class="lr-info"><div class="lr-title">The Neighbor Upstairs</div><div class="lr-meta">Ep 3 &bull; Yesterday</div></div><button class="lr-more"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg></button></div>
+        </div>
+    </div>
+
+
+    <!-- ╔══════════════════════════════════════╗
+         ║        SCREEN 4: PROFILE             ║
+         ╚══════════════════════════════════════╝ -->
+    <div id="screen-profile" class="screen">
+        <div class="prof-hero">
+            <div class="prof-hero-glow"></div>
+            <div class="prof-av-ring"><div class="prof-av">S</div></div>
+            <div class="prof-name">Sofia Laurent</div>
+            <div class="prof-handle">@sofia.hush &bull; Since 2025</div>
+        </div>
+        <div class="prof-stats">
+            <div class="ps-card"><div class="ps-val">29</div><div class="ps-label">Stories</div></div>
+            <div class="ps-card accent"><div class="ps-val">74h</div><div class="ps-label">Listened</div></div>
+            <div class="ps-card"><div class="ps-val">11</div><div class="ps-label">Favorites</div></div>
+        </div>
+
+        <div class="premium-cta-card">
+            <div class="pcc-glow"></div>
+            <div class="pcc-body">
+                <div class="pcc-badge">Hush+</div>
+                <div class="pcc-title">Go Premium</div>
+                <div class="pcc-desc">All voices, exclusive stories, ad-free</div>
+                <button class="pcc-btn">Upgrade</button>
+            </div>
+        </div>
+
+        <div class="settings-block">
+            <div class="sb-title">Preferences</div>
+            <div class="sb-row"><div class="sb-icon"><svg viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v4a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1"/><line x1="12" y1="19" x2="12" y2="22"/></svg></div><div class="sb-text"><div class="sb-name">Voice Preference</div><div class="sb-val">Deep masculine</div></div><svg class="sb-chev" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+            <div class="sb-row"><div class="sb-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></div><div class="sb-text"><div class="sb-name">Dark Mode</div><div class="sb-val">Always on</div></div><div class="toggle on" onclick="this.classList.toggle('on')"><div class="toggle-dot"></div></div></div>
+            <div class="sb-row"><div class="sb-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><div class="sb-text"><div class="sb-name">Privacy Lock</div><div class="sb-val">Require Face ID</div></div><div class="toggle" onclick="this.classList.toggle('on')"><div class="toggle-dot"></div></div></div>
+        </div>
+        <div class="settings-block">
+            <div class="sb-title">Account</div>
+            <div class="sb-row"><div class="sb-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div class="sb-text"><div class="sb-name">Email</div><div class="sb-val">sofia.l@email.com</div></div><svg class="sb-chev" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+            <div class="sb-row"><div class="sb-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="sb-text"><div class="sb-name">Subscription</div><div class="sb-val">Free plan</div></div><svg class="sb-chev" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+        </div>
+        <div class="app-footer">Hush v1.0 &bull; Your secret escape</div>
+    </div>
+
+
+    <!-- ╔══════════════════════════════════════╗
+         ║        STORY DETAIL                  ║
+         ╚══════════════════════════════════════╝ -->
+    <div id="story-detail" class="detail-panel">
+        <div class="dp-hero">
+            <div class="dp-hero-bg" id="dp-bg" style="background:linear-gradient(135deg,#0c2e3a,#164050)"></div>
+            <div class="dp-hero-fade"></div>
+            <div class="dp-back"><button onclick="closeDetail()"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button></div>
+            <div class="dp-hero-info">
+                <div class="dp-tags" id="dp-tags"></div>
+                <div class="dp-title" id="dp-title">The Neighbor Upstairs</div>
+                <div class="dp-meta" id="dp-meta">8 Episodes &bull; 3h 28m &bull; Caleb Storm</div>
+                <div class="dp-live"><span class="live-dot"></span><span id="dp-live-text">3.1K listening</span></div>
+            </div>
+        </div>
+        <div class="dp-body">
+            <div class="dp-actions">
+                <button class="dp-play" onclick="openPlayer()"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg><span id="dp-play-label">Play Episode 1</span></button>
+                <button class="dp-sec"><svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></button>
+                <button class="dp-sec"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+            </div>
+            <p class="dp-desc" id="dp-desc"></p>
+            <div class="dp-ep-title">Episodes</div>
+            <div class="dp-ep-list" id="dp-eps"></div>
+        </div>
+    </div>
+
+
+    <!-- ╔══════════════════════════════════════╗
+         ║        PLAYER                        ║
+         ╚══════════════════════════════════════╝ -->
+    <div id="player" class="player-panel">
+        <div class="pl-bg" id="pl-bg" style="background:linear-gradient(180deg,#0c2e3a 0%,#070d10 60%)"></div>
+        <div class="pl-particles" id="pl-particles"></div>
+        <div class="pl-content">
+            <div class="pl-top">
+                <button class="pl-down" onclick="closePlayer()"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+                <div class="pl-now">Now Playing</div>
+                <button class="pl-menu" onclick="openSleep()"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg></button>
+            </div>
+            <div class="pl-artwork">
+                <div class="pl-art-card" id="pl-art" style="background:linear-gradient(135deg,#0c2e3a,#164050)">
+                    <div class="pl-waveform" id="pl-waveform"></div>
+                </div>
+            </div>
+            <div class="pl-track-info">
+                <div class="pl-title" id="pl-title">The Neighbor Upstairs</div>
+                <div class="pl-artist" id="pl-artist">Caleb Storm</div>
+                <div class="pl-episode" id="pl-ep-label">Episode 3 &bull; Thin Walls</div>
+            </div>
+            <div class="pl-seek">
+                <div class="pl-seek-bar" id="pl-seek-bar"><div class="pl-seek-fill" id="pl-seek-fill" style="width:35%"></div></div>
+                <div class="pl-times"><span id="pl-time-now">7:42</span><span id="pl-time-end">22:30</span></div>
+            </div>
+            <div class="pl-controls">
+                <button class="pl-btn"><svg viewBox="0 0 24 24"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg></button>
+                <button class="pl-btn pl-skip"><svg viewBox="0 0 24 24"><polygon points="19,20 9,12 19,4"/><line x1="5" y1="19" x2="5" y2="5"/></svg></button>
+                <button class="pl-btn pl-main" onclick="togglePlay()"><svg viewBox="0 0 24 24" id="pp-main"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg></button>
+                <button class="pl-btn pl-skip"><svg viewBox="0 0 24 24"><polygon points="5,4 15,12 5,20"/><line x1="19" y1="5" x2="19" y2="19"/></svg></button>
+                <button class="pl-btn"><svg viewBox="0 0 24 24"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></button>
+            </div>
+            <div class="pl-bottom">
+                <div class="plb" onclick="openSleep()"><svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><span>Sleep</span></div>
+                <div class="plb" onclick="cycleSpeed()"><div class="speed-tag" id="speed-tag">1.0x</div><span>Speed</span></div>
+                <div class="plb active" onclick="this.classList.toggle('active')"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>Like</span></div>
+                <div class="plb"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span>Save</span></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ╔══════════════════════════════════════╗
+         ║        SLEEP MODAL                   ║
+         ╚══════════════════════════════════════╝ -->
+    <div id="sleep-modal" class="overlay" onclick="closeSleep(event)">
+        <div class="overlay-sheet">
+            <div class="os-handle"></div>
+            <div class="os-title">Sleep Timer</div>
+            <div class="os-grid">
+                <div class="os-cell" onclick="selSleep(this)"><div class="os-val">5</div><div class="os-unit">min</div></div>
+                <div class="os-cell" onclick="selSleep(this)"><div class="os-val">15</div><div class="os-unit">min</div></div>
+                <div class="os-cell sel" onclick="selSleep(this)"><div class="os-val">30</div><div class="os-unit">min</div></div>
+                <div class="os-cell" onclick="selSleep(this)"><div class="os-val">45</div><div class="os-unit">min</div></div>
+                <div class="os-cell" onclick="selSleep(this)"><div class="os-val">60</div><div class="os-unit">min</div></div>
+                <div class="os-cell" onclick="selSleep(this)"><div class="os-val">End</div><div class="os-unit">of ep</div></div>
+            </div>
+            <button class="os-confirm" onclick="closeSleep()">Set Timer</button>
+        </div>
+    </div>
+
+
+    <!-- ╔══════════════════════════════════════╗
+         ║        MINI PLAYER                   ║
+         ╚══════════════════════════════════════╝ -->
+    <div class="mini" id="mini" onclick="openPlayer()">
+        <div class="mini-prog" id="mini-prog" style="width:35%"></div>
+        <div class="mini-art" id="mini-art" style="background:linear-gradient(135deg,#0c2e3a,#164050)"></div>
+        <div class="mini-info"><div class="mini-title" id="mini-title">The Neighbor Upstairs</div><div class="mini-sub" id="mini-sub">Ep 3 &bull; Thin Walls</div></div>
+        <div class="mini-ctrl" onclick="event.stopPropagation()"><button class="mini-pp" onclick="togglePlay()"><svg viewBox="0 0 24 24" id="pp-mini"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg></button></div>
+    </div>
+
+
+    <!-- ╔══════════════════════════════════════╗
+         ║        BOTTOM NAV                    ║
+         ╚══════════════════════════════════════╝ -->
+    <nav class="bnav">
+        <div class="bnav-tab active" data-screen="home" onclick="navigateTo('home')"><div class="bnav-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><span>Home</span><div class="bnav-dot"></div></div>
+        <div class="bnav-tab" data-screen="explore" onclick="navigateTo('explore')"><div class="bnav-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><span>Explore</span><div class="bnav-dot"></div></div>
+        <div class="bnav-tab" data-screen="library" onclick="navigateTo('library')"><div class="bnav-icon"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div><span>Library</span><div class="bnav-dot"></div></div>
+        <div class="bnav-tab" data-screen="profile" onclick="navigateTo('profile')"><div class="bnav-icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><span>Profile</span><div class="bnav-dot"></div></div>
+    </nav>
+
+
+    <!-- ═══════════════════════════════════════
+         JS
+         ═══════════════════════════════════════ -->
+    <script>
+    const stories={neighbor:{title:'The Neighbor Upstairs',bg:'linear-gradient(135deg,#0c2e3a,#164050)',plBg:'linear-gradient(180deg,#0c2e3a 0%,#070d10 60%)',artist:'Caleb Storm',tags:['Forbidden','Proximity','Tension'],meta:'8 Episodes \u2022 3h 28m \u2022 Caleb Storm',live:'3.1K listening',desc:'The walls are paper-thin. You hear everything\u2014his music, his phone calls, his laughter. When the plumbing breaks and he knocks on your door shirtless at midnight, you realize the real problem isn\u2019t the noise. It\u2019s the tension.',episodes:[{title:'Move-In Day',dur:'24:30'},{title:'The Knock',dur:'26:10'},{title:'Thin Walls',dur:'28:00',current:true},{title:'The Laundry Room',dur:'25:40'},{title:'Power Outage',dur:'27:20'},{title:'The Balcony',dur:'23:50'},{title:'Noise Complaint',dur:'26:00'},{title:'Open Door',dur:'29:10'}]},photographer:{title:'The Photographer',bg:'linear-gradient(135deg,#1a0a20,#2d1438)',plBg:'linear-gradient(180deg,#1a0a20 0%,#070d10 60%)',artist:'Nico Voss',tags:['Art','Vulnerable','Intimate'],meta:'10 Episodes \u2022 4h 12m \u2022 Nico Voss',live:'4.8K listening',desc:'He asks you to model for his gallery show. "Just be natural," he says, adjusting the lighting. Each session peels away another layer\u2014of clothing, of walls, of pretense. The camera sees everything. So does he.',episodes:[{title:'The Studio',dur:'24:10'},{title:'First Shoot',dur:'26:30'},{title:'Natural Light',dur:'25:00'},{title:'The Darkroom',dur:'27:20'},{title:'Polaroids',dur:'24:40'},{title:'Gallery Night',dur:'28:10'},{title:'After Hours',dur:'25:30'},{title:'The Print',dur:'26:00'},{title:'Exposed',dur:'23:50'},{title:'Developed',dur:'29:00'}]},professor:{title:'Office Hours',bg:'linear-gradient(135deg,#2a1430,#3d1e45)',plBg:'linear-gradient(180deg,#2a1430 0%,#070d10 60%)',artist:'Caleb Storm',tags:['Professor','Forbidden','Intellectual'],meta:'9 Episodes \u2022 3h 50m \u2022 Caleb Storm',live:'3.5K listening',desc:'Professor Calloway\u2019s lectures on romantic poetry hit different when he\u2019s quoting Neruda while looking directly at you. You keep finding excuses to visit during office hours. He keeps letting you stay too long.',episodes:[{title:'First Lecture',dur:'24:30',current:true},{title:'The Citation',dur:'26:10'},{title:'Office Hours',dur:'25:20'},{title:'The Conference',dur:'27:00'},{title:'Late Paper',dur:'24:50'},{title:'The Reading',dur:'28:30'},{title:'Tenure Review',dur:'25:10'},{title:'Sabbatical',dur:'26:40'},{title:'Epilogue',dur:'27:30'}]},dancer:{title:'After the Show',bg:'linear-gradient(135deg,#200a14,#381020)',plBg:'linear-gradient(180deg,#200a14 0%,#070d10 60%)',artist:'Jade Ellis',tags:['Dancer','Passionate','Physical'],meta:'7 Episodes \u2022 2h 40m \u2022 Jade Ellis',live:'2.1K listening',desc:'She performs like she\u2019s the only person in the room. Backstage, she\u2019s all adrenaline and sweat. When she pulls you past the stage door, the real performance begins.',episodes:[{title:'Front Row',dur:'22:30'},{title:'Backstage',dur:'24:10'},{title:'The Rehearsal',dur:'26:40'},{title:'Opening Night',dur:'23:20'},{title:'The Lift',dur:'25:50'},{title:'Encore',dur:'27:10'},{title:'Final Bow',dur:'24:00'}]},barista:{title:'The Barista',bg:'linear-gradient(135deg,#2a2008,#3d3010)',plBg:'linear-gradient(180deg,#2a2008 0%,#070d10 60%)',artist:'Nico Voss',tags:['Coffee Shop','Sweet','Slow Build'],meta:'6 Episodes \u2022 2h 15m \u2022 Nico Voss',live:'5.4K listening',desc:'Every morning, same order, same smile. He always writes something extra on your cup. Today it\u2019s a phone number. Tomorrow it\u2019s a date. Next week, you\u2019re in his apartment above the shop.',episodes:[{title:'Regular Order',dur:'22:10'},{title:'The Note',dur:'24:30'},{title:'After Close',dur:'23:45'},{title:'His Place',dur:'25:20'},{title:'Morning Shift',dur:'22:00'},{title:'Our Table',dur:'24:30'}]},lifeguard:{title:'Lifeguard Summer',bg:'linear-gradient(135deg,#0a2030,#143848)',plBg:'linear-gradient(180deg,#0a2030 0%,#070d10 60%)',artist:'Nico Voss',tags:['Beach','Playful','Summer'],meta:'6 Episodes \u2022 2h 30m \u2022 Nico Voss',live:'1.8K listening',desc:'Golden skin, aviator sunglasses, and a whistle around his neck. He watches the ocean all day. At night, he watches you.',episodes:[{title:'Day One',dur:'24:10'},{title:'Sunscreen',dur:'26:30'},{title:'The Bonfire',dur:'25:00'},{title:'Night Swim',dur:'24:20'},{title:'The Tower',dur:'26:00'},{title:'Last Day',dur:'25:30'}]},chef:{title:'Private Chef',bg:'linear-gradient(135deg,#2a1508,#402010)',plBg:'linear-gradient(180deg,#2a1508 0%,#070d10 60%)',artist:'Jade Ellis',tags:['Sensual','Cooking','Domestic'],meta:'5 Episodes \u2022 2h \u2022 Jade Ellis',live:'1.2K listening',desc:'She cooks like she\u2019s making love to the ingredients. When she feeds you from the spoon and watches your reaction, the kitchen becomes the most dangerous room in the house.',episodes:[{title:'The Tasting',dur:'24:30'},{title:'Knife Skills',dur:'22:10'},{title:'Simmer',dur:'26:00'},{title:'Dessert',dur:'25:15'},{title:'Breakfast',dur:'24:00'}]},penpal:{title:'Dear Pen Pal',bg:'linear-gradient(135deg,#0a0a28,#141440)',plBg:'linear-gradient(180deg,#0a0a28 0%,#070d10 60%)',artist:'Caleb Storm',tags:['Letters','Longing','Emotional'],meta:'8 Episodes \u2022 3h 20m \u2022 Caleb Storm',live:'2.6K listening',desc:'You\u2019ve never met. But his letters make you feel things no one in person ever has. Each envelope is more daring than the last. When he finally writes "I\u2019m coming to your city"\u2014your heart stops.',episodes:[{title:'First Letter',dur:'24:10'},{title:'Dear Stranger',dur:'26:30'},{title:'The Photograph',dur:'25:00'},{title:'Confessions',dur:'27:20'},{title:'Come Closer',dur:'24:40'},{title:'The Visit',dur:'28:10'},{title:'Face to Face',dur:'25:30'},{title:'Yours',dur:'26:00'}]},'whisper-rain':{title:'Whisper & Rain',bg:'linear-gradient(135deg,#070d18,#0a1428)',plBg:'linear-gradient(180deg,#070d18 0%,#070d10 60%)',artist:'Caleb Storm',tags:['ASMR','Sleep','Rain'],meta:'4 Episodes \u2022 1h 40m \u2022 Caleb Storm',live:'4.5K listening',desc:'Rain on the window. His voice against your ear. Nothing else matters.',episodes:[{title:'The Storm',dur:'24:10'},{title:'Stay Close',dur:'26:30'},{title:'Morning Drizzle',dur:'25:20'},{title:'Clear',dur:'24:00'}]},goodnight:{title:'Goodnight, Love',bg:'linear-gradient(135deg,#100a1e,#1a1030)',plBg:'linear-gradient(180deg,#100a1e 0%,#070d10 60%)',artist:'Nico Voss',tags:['Comfort','Gentle','Bedtime'],meta:'5 Episodes \u2022 2h 10m \u2022 Nico Voss',live:'3.2K listening',desc:'Soft words before sleep. He tells you about his day, asks about yours, and says all the things you need to hear.',episodes:[{title:'How Was Your Day',dur:'24:30'},{title:'I\u2019m Right Here',dur:'26:10'},{title:'Tell Me',dur:'25:20'},{title:'Stay',dur:'27:00'},{title:'Good Morning',dur:'24:50'}]},'cabin-night':{title:'Cabin Nights',bg:'linear-gradient(135deg,#0d1008,#1a2010)',plBg:'linear-gradient(180deg,#0d1008 0%,#070d10 60%)',artist:'Jade Ellis',tags:['Fireplace','Cozy','Isolated'],meta:'4 Episodes \u2022 1h 45m \u2022 Jade Ellis',live:'1.9K listening',desc:'Snowed in. Just the two of you. A fire, a blanket, and nowhere to be.',episodes:[{title:'Arrival',dur:'24:10'},{title:'By the Fire',dur:'28:00'},{title:'Snowbound',dur:'26:30'},{title:'Thaw',dur:'25:00'}]}};
+
+    let playing=true,spd=1.0,spds=[0.5,0.75,1.0,1.25,1.5,2.0],spdI=2,wvI=null;
+
+    function navigateTo(s){document.querySelectorAll('.screen').forEach(e=>e.classList.remove('active'));document.getElementById('screen-'+s).classList.add('active');document.querySelectorAll('.bnav-tab').forEach(n=>n.classList.remove('active'));document.querySelector(`.bnav-tab[data-screen="${s}"]`).classList.add('active');window.scrollTo({top:0,behavior:'smooth'});initObs();}
+
+    document.querySelectorAll('.vibe-pill').forEach(p=>{p.addEventListener('click',()=>{document.querySelectorAll('.vibe-pill').forEach(x=>x.classList.remove('active'));p.classList.add('active');});});
+
+    document.querySelectorAll('.lt').forEach(t=>{t.addEventListener('click',()=>{document.querySelectorAll('.lt').forEach(x=>x.classList.remove('active'));t.classList.add('active');document.querySelectorAll('.lib-tab-body').forEach(c=>{c.style.display='none';c.classList.remove('active');});const el=document.getElementById('lib-'+t.dataset.tab);el.style.display='block';el.classList.add('active');});});
+
+    function openStoryDetail(k){const s=stories[k];if(!s)return;document.getElementById('dp-bg').style.background=s.bg;document.getElementById('dp-title').textContent=s.title;document.getElementById('dp-meta').textContent=s.meta;document.getElementById('dp-desc').textContent=s.desc;document.getElementById('dp-live-text').textContent=s.live;document.getElementById('dp-tags').innerHTML=s.tags.map(t=>`<span class="dp-tag">${t}</span>`).join('');document.getElementById('dp-eps').innerHTML=s.episodes.map((e,i)=>`<div class="dp-ep ${e.current?'current':''}" onclick="playEp('${k}',${i})"><div class="dp-ep-n">${i+1}</div><div class="dp-ep-info"><div class="dp-ep-t">${e.title}</div><div class="dp-ep-s">${e.current?'Playing now':'Ep '+(i+1)}</div></div><div class="dp-ep-d">${e.dur}</div></div>`).join('');const ci=s.episodes.findIndex(e=>e.current);document.getElementById('dp-play-label').textContent=ci>=0?'Continue Ep '+(ci+1):'Play Episode 1';document.getElementById('story-detail').classList.add('open');document.body.style.overflow='hidden';}
+
+    function closeDetail(){document.getElementById('story-detail').classList.remove('open');document.body.style.overflow='';}
+
+    function playEp(k,i){const s=stories[k];if(!s)return;const e=s.episodes[i];updMini(s.title,s.bg,s.artist,`Ep ${i+1} \u2022 ${e.title}`);document.getElementById('pl-art').style.background=s.bg;document.getElementById('pl-bg').style.background=s.plBg;document.getElementById('pl-title').textContent=s.title;document.getElementById('pl-artist').textContent=s.artist;document.getElementById('pl-ep-label').textContent=`Episode ${i+1} \u2022 ${e.title}`;closeDetail();openPlayer();}
+
+    function updMini(t,bg,a,sub){document.getElementById('mini-title').textContent=t;document.getElementById('mini-sub').textContent=sub;document.getElementById('mini-art').style.background=bg;}
+
+    function openPlayer(){document.getElementById('player').classList.add('open');document.body.style.overflow='hidden';startWv();}
+    function closePlayer(){document.getElementById('player').classList.remove('open');document.body.style.overflow='';stopWv();}
+
+    function togglePlay(){playing=!playing;const pa='<rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>';const pl='<polygon points="6,3 20,12 6,21"/>';document.getElementById('pp-main').innerHTML=playing?pa:pl;document.getElementById('pp-mini').innerHTML=playing?pa:pl;playing?startWv():stopWv();}
+
+    function initWv(){const c=document.getElementById('pl-waveform');c.innerHTML='';for(let i=0;i<40;i++){const b=document.createElement('div');b.className='wv-bar';b.style.height='4px';c.appendChild(b);}}
+
+    function startWv(){if(wvI)return;const b=document.querySelectorAll('.wv-bar');wvI=setInterval(()=>{b.forEach(x=>{x.style.height=(Math.random()*50+4)+'px';});},130);}
+
+    function stopWv(){if(wvI){clearInterval(wvI);wvI=null;}document.querySelectorAll('.wv-bar').forEach(b=>b.style.height='4px');}
+
+    function initParticles(){const c=document.getElementById('pl-particles');c.innerHTML='';for(let i=0;i<15;i++){const p=document.createElement('div');p.className='ptcl';p.style.left=Math.random()*100+'%';p.style.top=Math.random()*100+'%';p.style.animationDelay=Math.random()*5+'s';p.style.animationDuration=(4+Math.random()*4)+'s';c.appendChild(p);}}
+
+    function cycleSpeed(){spdI=(spdI+1)%spds.length;spd=spds[spdI];document.getElementById('speed-tag').textContent=spd+'x';}
+
+    function openSleep(){document.getElementById('sleep-modal').classList.add('open');}
+    function closeSleep(e){if(e&&e.target!==e.currentTarget)return;document.getElementById('sleep-modal').classList.remove('open');}
+    function selSleep(el){document.querySelectorAll('.os-cell').forEach(o=>o.classList.remove('sel'));el.classList.add('sel');}
+
+    document.getElementById('pl-seek-bar').addEventListener('click',function(e){const r=this.getBoundingClientRect();const p=Math.max(0,Math.min(100,((e.clientX-r.left)/r.width)*100));document.getElementById('pl-seek-fill').style.width=p+'%';document.getElementById('mini-prog').style.width=p+'%';const ts=22*60+30;const s=Math.floor(ts*p/100);document.getElementById('pl-time-now').textContent=Math.floor(s/60)+':'+String(s%60).padStart(2,'0');});
+
+    let pPct=35;
+    setInterval(()=>{if(!playing)return;pPct+=0.05;if(pPct>100)pPct=0;document.getElementById('pl-seek-fill').style.width=pPct+'%';document.getElementById('mini-prog').style.width=pPct+'%';const ts=22*60+30;const s=Math.floor(ts*pPct/100);const el=document.getElementById('pl-time-now');if(el)el.textContent=Math.floor(s/60)+':'+String(s%60).padStart(2,'0');},1000);
+
+    function initObs(){const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.1});document.querySelectorAll('.anim-in').forEach(el=>{if(!el.classList.contains('visible'))obs.observe(el);});}
+
+    function setGreeting(){const h=new Date().getHours();let g='Good evening,';if(h<12)g='Good morning,';else if(h<17)g='Good afternoon,';const el=document.getElementById('greeting-label');if(el)el.textContent=g;}
+
+    setGreeting();initWv();initParticles();initObs();
+    </script>
+
+</body>
+</html>
