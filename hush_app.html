@@ -3,14 +3,72 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Hush</title>
-    <meta name="description" content="Hush — Your secret escape. Premium intimate audio stories.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <title>LucidFM</title>
+    <meta name="description" content="LucidFM — Dream louder. Premium intimate audio stories.">
     <meta name="theme-color" content="#070d10">
     <link rel="stylesheet" href="hush_app.css">
 </head>
 
 <body>
+
+    <!-- ╔══════════════════════════════════════╗
+         ║        ONBOARDING                    ║
+         ╚══════════════════════════════════════╝ -->
+    <div id="onboarding" class="onboarding">
+        <div class="onb-slides">
+            <div class="onb-slide active" data-slide="0">
+                <div class="onb-glow"></div>
+                <div class="onb-graphic-row onb-slide0">
+                    <div class="onb-orb onb-orb-1"></div>
+                    <div class="onb-orb onb-orb-2"></div>
+                    <div class="onb-orb onb-orb-3"></div>
+                </div>
+                <div class="onb-logo">L</div>
+                <h1 class="onb-brand">LucidFM</h1>
+                <p class="onb-tagline">Dream louder.</p>
+                <p class="onb-desc">Premium intimate audio stories, made for you.</p>
+                <div class="onb-waveform-demo">
+                    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+            <div class="onb-slide" data-slide="1">
+                <div class="onb-glow"></div>
+                <div class="onb-vibe-grid">
+                    <div class="onb-vibe-card" style="--onb-vibe:linear-gradient(135deg,#f472b6,#be185d)"><span class="onb-vibe-emoji">&#128293;</span><span class="onb-vibe-label">Passionate</span></div>
+                    <div class="onb-vibe-card" style="--onb-vibe:linear-gradient(135deg,#7c3aed,#5b21b6)"><span class="onb-vibe-emoji">&#128156;</span><span class="onb-vibe-label">Romantic</span></div>
+                    <div class="onb-vibe-card" style="--onb-vibe:linear-gradient(135deg,#06b6d4,#0e7490)"><span class="onb-vibe-emoji">&#127769;</span><span class="onb-vibe-label">Late Night</span></div>
+                    <div class="onb-vibe-card active" style="--onb-vibe:linear-gradient(135deg,#f472b6,#7c3aed)"><span class="onb-vibe-emoji">&#127910;</span><span class="onb-vibe-label">All</span></div>
+                </div>
+                <div class="onb-icon-row">
+                    <span class="onb-vibe-demo active">All</span>
+                    <span class="onb-vibe-demo">Romantic</span>
+                    <span class="onb-vibe-demo">ASMR</span>
+                </div>
+                <h2 class="onb-title">Find your vibe</h2>
+                <p class="onb-desc">Browse by mood—passionate, dreamy, taboo, or soft. Pick a story and hit play.</p>
+            </div>
+            <div class="onb-slide" data-slide="2">
+                <div class="onb-glow"></div>
+                <div class="onb-feature-row">
+                    <div class="onb-feature"><div class="onb-feature-icon"><svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></div><span>Save</span></div>
+                    <div class="onb-feature"><div class="onb-feature-icon onb-heart"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div><span>Like</span></div>
+                    <div class="onb-feature"><div class="onb-feature-icon"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></div><span>Play</span></div>
+                </div>
+                <div class="onb-hearts">
+                    <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                </div>
+                <h2 class="onb-title">You’re in</h2>
+                <p class="onb-desc">Save favorites, pick up where you left off, and listen your way.</p>
+                <button class="onb-cta" onclick="finishOnboarding()">Get started</button>
+            </div>
+        </div>
+        <div class="onb-footer">
+            <button class="onb-skip" id="onb-skip" onclick="finishOnboarding()">Skip</button>
+            <div class="onb-dots" id="onb-dots"></div>
+            <button class="onb-next" id="onb-next" onclick="nextOnboardingSlide()">Next</button>
+        </div>
+    </div>
 
     <!-- ╔══════════════════════════════════════╗
          ║        SCREEN 1: HOME                ║
@@ -20,8 +78,8 @@
         <!-- Header -->
         <header class="hdr">
             <div class="hdr-brand">
-                <div class="hdr-logo">h</div>
-                <span class="hdr-wordmark">hush</span>
+                <div class="hdr-logo">L</div>
+                <span class="hdr-wordmark">LucidFM</span>
             </div>
             <div class="hdr-actions">
                 <button class="hdr-icon-btn" aria-label="Notifications">
@@ -53,7 +111,7 @@
 
         <!-- Featured Story (Editorial Hero) -->
         <div class="editorial-hero" onclick="openStoryDetail('neighbor')">
-            <div class="eh-gradient"></div>
+            <div class="eh-gradient" style="background:url('assets/thumb_memories.png') center/cover no-repeat"></div>
             <div class="eh-content">
                 <div class="eh-eyebrow">Editor's Pick</div>
                 <h2 class="eh-title">The Neighbor<br>Upstairs</h2>
@@ -75,11 +133,11 @@
         <section class="sec">
             <div class="sec-head">
                 <h2>Pick up where you left</h2>
-                <span class="sec-more">See all</span>
+                <span class="sec-more" onclick="openSeeAll('resume')">See all</span>
             </div>
             <div class="h-rail">
                 <div class="resume-card anim-in" onclick="openStoryDetail('neighbor')">
-                    <div class="rc-art" style="background: linear-gradient(135deg,#0c2e3a,#164050)">
+                    <div class="rc-art" style="background:url('assets/thumb_memories.png') center/cover no-repeat">
                         <div class="rc-play"><svg viewBox="0 0 24 24"><polygon points="7,4 19,12 7,20"/></svg></div>
                     </div>
                     <div class="rc-bar"><div class="rc-fill" style="width:62%"></div></div>
@@ -89,7 +147,7 @@
                     </div>
                 </div>
                 <div class="resume-card anim-in" onclick="openStoryDetail('professor')">
-                    <div class="rc-art" style="background: linear-gradient(135deg,#2a1430,#3d1e45)">
+                    <div class="rc-art" style="background:url('assets/thumb_green_flag.png') center/cover no-repeat">
                         <div class="rc-play"><svg viewBox="0 0 24 24"><polygon points="7,4 19,12 7,20"/></svg></div>
                     </div>
                     <div class="rc-bar"><div class="rc-fill" style="width:28%"></div></div>
@@ -99,7 +157,7 @@
                     </div>
                 </div>
                 <div class="resume-card anim-in" onclick="openStoryDetail('barista')">
-                    <div class="rc-art" style="background: linear-gradient(135deg,#2a2008,#3d3010)">
+                    <div class="rc-art" style="background:url('assets/thumb_domestic.png') center/cover no-repeat">
                         <div class="rc-play"><svg viewBox="0 0 24 24"><polygon points="7,4 19,12 7,20"/></svg></div>
                     </div>
                     <div class="rc-bar"><div class="rc-fill" style="width:100%"></div></div>
@@ -115,11 +173,23 @@
         <section class="sec">
             <div class="sec-head">
                 <h2>Trending</h2>
-                <span class="sec-more">See all</span>
+                <span class="sec-more" onclick="openSeeAll('trending')">See all</span>
             </div>
             <div class="h-rail">
+                <div class="poster-card anim-in" onclick="openStoryDetail('marked')">
+                    <div class="pc-img" style="background:url('assets/thumb_leave_mark.png') center/cover no-repeat">
+                        <div class="pc-badge trend">Hot</div>
+                        <div class="pc-hover-play"><svg viewBox="0 0 24 24"><polygon points="7,4 19,12 7,20"/></svg></div>
+                        <div class="pc-time">2h 20m</div>
+                    </div>
+                    <div class="pc-info">
+                        <div class="pc-title">Leave a Mark</div>
+                        <div class="pc-sub">Possessive &bull; Intense</div>
+                        <div class="pc-hearts"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>4.1K</span></div>
+                    </div>
+                </div>
                 <div class="poster-card anim-in" onclick="openStoryDetail('neighbor')">
-                    <div class="pc-img" style="background:linear-gradient(160deg,#0c2e3a,#164050,#0c2e3a)">
+                    <div class="pc-img" style="background:url('assets/thumb_memories.png') center/cover no-repeat">
                         <div class="pc-badge trend">Hot</div>
                         <div class="pc-hover-play"><svg viewBox="0 0 24 24"><polygon points="7,4 19,12 7,20"/></svg></div>
                         <div class="pc-time">3h 28m</div>
@@ -131,7 +201,7 @@
                     </div>
                 </div>
                 <div class="poster-card anim-in" onclick="openStoryDetail('photographer')">
-                    <div class="pc-img" style="background:linear-gradient(160deg,#1a0a20,#2d1438,#1a0a20)">
+                    <div class="pc-img" style="background:url('assets/thumb_sensory.png') center/cover no-repeat">
                         <div class="pc-badge vip">VIP</div>
                         <div class="pc-hover-play"><svg viewBox="0 0 24 24"><polygon points="7,4 19,12 7,20"/></svg></div>
                         <div class="pc-time">4h 12m</div>
@@ -142,19 +212,20 @@
                         <div class="pc-hearts"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>4.8K</span></div>
                     </div>
                 </div>
-                <div class="poster-card anim-in" onclick="openStoryDetail('professor')">
-                    <div class="pc-img" style="background:linear-gradient(160deg,#2a1430,#3d1e45,#2a1430)">
+                <div class="poster-card anim-in" onclick="openStoryDetail('hockey')">
+                    <div class="pc-img" style="background:url('assets/thumb_sporty_bf.png') center/cover no-repeat">
+                        <div class="pc-badge fresh">New</div>
                         <div class="pc-hover-play"><svg viewBox="0 0 24 24"><polygon points="7,4 19,12 7,20"/></svg></div>
-                        <div class="pc-time">3h 50m</div>
+                        <div class="pc-time">2h 50m</div>
                     </div>
                     <div class="pc-info">
-                        <div class="pc-title">Office Hours</div>
-                        <div class="pc-sub">Professor &bull; Tension</div>
-                        <div class="pc-hearts"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>3.5K</span></div>
+                        <div class="pc-title">Ice &amp; Fire</div>
+                        <div class="pc-sub">Hockey &bull; Rivals</div>
+                        <div class="pc-hearts"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>2.8K</span></div>
                     </div>
                 </div>
                 <div class="poster-card anim-in" onclick="openStoryDetail('dancer')">
-                    <div class="pc-img" style="background:linear-gradient(160deg,#200a14,#381020,#200a14)">
+                    <div class="pc-img" style="background:url('assets/thumb_situationship.png') center/cover no-repeat">
                         <div class="pc-badge fresh">New</div>
                         <div class="pc-hover-play"><svg viewBox="0 0 24 24"><polygon points="7,4 19,12 7,20"/></svg></div>
                         <div class="pc-time">2h 40m</div>
@@ -165,8 +236,20 @@
                         <div class="pc-hearts"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>2.1K</span></div>
                     </div>
                 </div>
+                <div class="poster-card anim-in" onclick="openStoryDetail('redflag')">
+                    <div class="pc-img" style="background:url('assets/thumb_red_flags.png') center/cover no-repeat">
+                        <div class="pc-badge trend">Hot</div>
+                        <div class="pc-hover-play"><svg viewBox="0 0 24 24"><polygon points="7,4 19,12 7,20"/></svg></div>
+                        <div class="pc-time">3h 10m</div>
+                    </div>
+                    <div class="pc-info">
+                        <div class="pc-title">Red Flags</div>
+                        <div class="pc-sub">Bad Boy &bull; Thrilling</div>
+                        <div class="pc-hearts"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>3.6K</span></div>
+                    </div>
+                </div>
                 <div class="poster-card anim-in" onclick="openStoryDetail('barista')">
-                    <div class="pc-img" style="background:linear-gradient(160deg,#2a2008,#3d3010,#2a2008)">
+                    <div class="pc-img" style="background:url('assets/thumb_domestic.png') center/cover no-repeat">
                         <div class="pc-hover-play"><svg viewBox="0 0 24 24"><polygon points="7,4 19,12 7,20"/></svg></div>
                         <div class="pc-time">2h 15m</div>
                     </div>
@@ -183,11 +266,11 @@
         <section class="sec">
             <div class="sec-head">
                 <h2>For You</h2>
-                <span class="sec-more">See all</span>
+                <span class="sec-more" onclick="openSeeAll('forYou')">See all</span>
             </div>
             <div class="editorial-grid">
                 <div class="eg-card eg-wide anim-in" onclick="openStoryDetail('lifeguard')">
-                    <div class="eg-bg" style="background:linear-gradient(135deg,#0a2030,#143848)"></div>
+                    <div class="eg-bg" style="background:url('assets/thumb_caught.png') center/cover no-repeat"></div>
                     <div class="eg-body">
                         <div class="eg-label">Recommended</div>
                         <div class="eg-name">Lifeguard Summer</div>
@@ -195,17 +278,24 @@
                     </div>
                 </div>
                 <div class="eg-card anim-in" onclick="openStoryDetail('chef')">
-                    <div class="eg-bg" style="background:linear-gradient(135deg,#2a1508,#402010)"></div>
+                    <div class="eg-bg" style="background:url('assets/thumb_slow_burn.png') center/cover no-repeat"></div>
                     <div class="eg-body">
                         <div class="eg-name">Private Chef</div>
                         <div class="eg-meta">Sensual &bull; Cooking</div>
                     </div>
                 </div>
                 <div class="eg-card anim-in" onclick="openStoryDetail('penpal')">
-                    <div class="eg-bg" style="background:linear-gradient(135deg,#0a0a28,#141440)"></div>
+                    <div class="eg-bg" style="background:url('assets/thumb_not_her.png') center/cover no-repeat"></div>
                     <div class="eg-body">
                         <div class="eg-name">Dear Pen Pal</div>
                         <div class="eg-meta">Letters &bull; Longing</div>
+                    </div>
+                </div>
+                <div class="eg-card anim-in" onclick="openStoryDetail('professor')">
+                    <div class="eg-bg" style="background:url('assets/thumb_green_flag.png') center/cover no-repeat"></div>
+                    <div class="eg-body">
+                        <div class="eg-name">Office Hours</div>
+                        <div class="eg-meta">Professor &bull; Forbidden</div>
                     </div>
                 </div>
             </div>
@@ -215,7 +305,7 @@
         <section class="sec">
             <div class="sec-head">
                 <h2>Popular Voices</h2>
-                <span class="sec-more">See all</span>
+                <span class="sec-more" onclick="openSeeAll('voices')">See all</span>
             </div>
             <div class="voice-list">
                 <div class="voice-row anim-in">
@@ -240,25 +330,25 @@
         <section class="sec">
             <div class="sec-head">
                 <h2>Wind Down</h2>
-                <span class="sec-more">See all</span>
+                <span class="sec-more" onclick="openSeeAll('windDown')">See all</span>
             </div>
             <div class="h-rail">
                 <div class="sleep-tile anim-in" onclick="openStoryDetail('whisper-rain')">
-                    <div class="st-art" style="background:linear-gradient(180deg,#070d18,#0a1428)">
+                    <div class="st-art" style="background:url('assets/thumb_messy_hair.png') center/cover no-repeat">
                         <div class="st-emoji">&#127769;</div>
                     </div>
                     <div class="st-name">Whisper & Rain</div>
                     <div class="st-tag">ASMR &bull; Sleep</div>
                 </div>
                 <div class="sleep-tile anim-in" onclick="openStoryDetail('goodnight')">
-                    <div class="st-art" style="background:linear-gradient(180deg,#100a1e,#1a1030)">
+                    <div class="st-art" style="background:url('assets/thumb_hurt_comfort.png') center/cover no-repeat">
                         <div class="st-emoji">&#128156;</div>
                     </div>
                     <div class="st-name">Goodnight, Love</div>
                     <div class="st-tag">Comfort &bull; Gentle</div>
                 </div>
                 <div class="sleep-tile anim-in" onclick="openStoryDetail('cabin-night')">
-                    <div class="st-art" style="background:linear-gradient(180deg,#0d1008,#1a2010)">
+                    <div class="st-art" style="background:url('assets/thumb_mirror.png') center/cover no-repeat">
                         <div class="st-emoji">&#127956;&#65039;</div>
                     </div>
                     <div class="st-name">Cabin Nights</div>
@@ -318,9 +408,11 @@
         <section class="sec">
             <div class="sec-head"><h2>Top This Week</h2></div>
             <div class="ranking-list">
-                <div class="rank-row anim-in" onclick="openStoryDetail('neighbor')"><div class="rank-num">#1</div><div class="rank-art" style="background:linear-gradient(135deg,#0c2e3a,#164050)"></div><div class="rank-info"><div class="rank-title">The Neighbor Upstairs</div><div class="rank-meta">8 Eps &bull; Forbidden</div></div><div class="rank-up"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg></div></div>
-                <div class="rank-row anim-in" onclick="openStoryDetail('barista')"><div class="rank-num">#2</div><div class="rank-art" style="background:linear-gradient(135deg,#2a2008,#3d3010)"></div><div class="rank-info"><div class="rank-title">The Barista</div><div class="rank-meta">6 Eps &bull; Sweet</div></div><div class="rank-up"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg></div></div>
-                <div class="rank-row anim-in" onclick="openStoryDetail('photographer')"><div class="rank-num">#3</div><div class="rank-art" style="background:linear-gradient(135deg,#1a0a20,#2d1438)"></div><div class="rank-info"><div class="rank-title">The Photographer</div><div class="rank-meta">10 Eps &bull; Art</div></div><div class="rank-up"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg></div></div>
+                <div class="rank-row anim-in" onclick="openStoryDetail('marked')"><div class="rank-num">#1</div><div class="rank-art" style="background:url('assets/thumb_leave_mark.png') center/cover no-repeat"></div><div class="rank-info"><div class="rank-title">Leave a Mark</div><div class="rank-meta">5 Eps &bull; Possessive</div></div><div class="rank-up"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg></div></div>
+                <div class="rank-row anim-in" onclick="openStoryDetail('neighbor')"><div class="rank-num">#2</div><div class="rank-art" style="background:url('assets/thumb_memories.png') center/cover no-repeat"></div><div class="rank-info"><div class="rank-title">The Neighbor Upstairs</div><div class="rank-meta">8 Eps &bull; Forbidden</div></div><div class="rank-up"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg></div></div>
+                <div class="rank-row anim-in" onclick="openStoryDetail('barista')"><div class="rank-num">#3</div><div class="rank-art" style="background:url('assets/thumb_domestic.png') center/cover no-repeat"></div><div class="rank-info"><div class="rank-title">The Barista</div><div class="rank-meta">6 Eps &bull; Sweet</div></div><div class="rank-up"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg></div></div>
+                <div class="rank-row anim-in" onclick="openStoryDetail('hockey')"><div class="rank-num">#4</div><div class="rank-art" style="background:url('assets/thumb_sporty_bf.png') center/cover no-repeat"></div><div class="rank-info"><div class="rank-title">Ice &amp; Fire</div><div class="rank-meta">6 Eps &bull; Hockey</div></div><div class="rank-up"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg></div></div>
+                <div class="rank-row anim-in" onclick="openStoryDetail('photographer')"><div class="rank-num">#5</div><div class="rank-art" style="background:url('assets/thumb_sensory.png') center/cover no-repeat"></div><div class="rank-info"><div class="rank-title">The Photographer</div><div class="rank-meta">10 Eps &bull; Art</div></div><div class="rank-up"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg></div></div>
             </div>
         </section>
     </div>
@@ -340,17 +432,20 @@
         </div>
 
         <div id="lib-saved" class="lib-tab-body active">
-            <div class="lib-row" onclick="openStoryDetail('neighbor')"><div class="lr-art" style="background:linear-gradient(135deg,#0c2e3a,#164050)"></div><div class="lr-info"><div class="lr-title">The Neighbor Upstairs</div><div class="lr-meta">8 Eps &bull; Ep 3</div><div class="lr-prog"><div class="lr-fill" style="width:38%"></div></div></div><button class="lr-more"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg></button></div>
-            <div class="lib-row" onclick="openStoryDetail('photographer')"><div class="lr-art" style="background:linear-gradient(135deg,#1a0a20,#2d1438)"></div><div class="lr-info"><div class="lr-title">The Photographer</div><div class="lr-meta">10 Eps &bull; Art</div><div class="lr-prog"><div class="lr-fill" style="width:0%"></div></div></div><button class="lr-more"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg></button></div>
-            <div class="lib-row" onclick="openStoryDetail('professor')"><div class="lr-art" style="background:linear-gradient(135deg,#2a1430,#3d1e45)"></div><div class="lr-info"><div class="lr-title">Office Hours</div><div class="lr-meta">9 Eps &bull; Professor</div><div class="lr-prog"><div class="lr-fill" style="width:11%"></div></div></div><button class="lr-more"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg></button></div>
-            <div class="lib-row" onclick="openStoryDetail('barista')"><div class="lr-art" style="background:linear-gradient(135deg,#2a2008,#3d3010)"></div><div class="lr-info"><div class="lr-title">The Barista</div><div class="lr-meta">6 Eps &bull; Complete</div><div class="lr-prog"><div class="lr-fill" style="width:100%"></div></div></div><button class="lr-more"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg></button></div>
+            <div class="lib-row" onclick="openStoryDetail('neighbor')"><div class="lr-art" style="background:url('assets/thumb_memories.png') center/cover no-repeat"></div><div class="lr-info"><div class="lr-title">The Neighbor Upstairs</div><div class="lr-meta">8 Eps &bull; Ep 3</div><div class="lr-prog"><div class="lr-fill" style="width:38%"></div></div></div><button class="lr-more"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg></button></div>
+            <div class="lib-row" onclick="openStoryDetail('photographer')"><div class="lr-art" style="background:url('assets/thumb_sensory.png') center/cover no-repeat"></div><div class="lr-info"><div class="lr-title">The Photographer</div><div class="lr-meta">10 Eps &bull; Art</div><div class="lr-prog"><div class="lr-fill" style="width:0%"></div></div></div><button class="lr-more"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg></button></div>
+            <div class="lib-row" onclick="openStoryDetail('professor')"><div class="lr-art" style="background:url('assets/thumb_green_flag.png') center/cover no-repeat"></div><div class="lr-info"><div class="lr-title">Office Hours</div><div class="lr-meta">9 Eps &bull; Professor</div><div class="lr-prog"><div class="lr-fill" style="width:11%"></div></div></div><button class="lr-more"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg></button></div>
+            <div class="lib-row" onclick="openStoryDetail('marked')"><div class="lr-art" style="background:url('assets/thumb_leave_mark.png') center/cover no-repeat"></div><div class="lr-info"><div class="lr-title">Leave a Mark</div><div class="lr-meta">5 Eps &bull; Possessive</div><div class="lr-prog"><div class="lr-fill" style="width:60%"></div></div></div><button class="lr-more"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg></button></div>
+            <div class="lib-row" onclick="openStoryDetail('barista')"><div class="lr-art" style="background:url('assets/thumb_domestic.png') center/cover no-repeat"></div><div class="lr-info"><div class="lr-title">The Barista</div><div class="lr-meta">6 Eps &bull; Complete</div><div class="lr-prog"><div class="lr-fill" style="width:100%"></div></div></div><button class="lr-more"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg></button></div>
+            <div class="lib-row" onclick="openStoryDetail('hockey')"><div class="lr-art" style="background:url('assets/thumb_sporty_bf.png') center/cover no-repeat"></div><div class="lr-info"><div class="lr-title">Ice &amp; Fire</div><div class="lr-meta">6 Eps &bull; Hockey</div><div class="lr-prog"><div class="lr-fill" style="width:0%"></div></div></div><button class="lr-more"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg></button></div>
         </div>
         <div id="lib-downloaded" class="lib-tab-body" style="display:none">
-            <div class="lib-row" onclick="openStoryDetail('neighbor')"><div class="lr-art" style="background:linear-gradient(135deg,#0c2e3a,#164050)"><div class="lr-dl-badge"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div></div><div class="lr-info"><div class="lr-title">The Neighbor Upstairs</div><div class="lr-meta">Eps 1-3 &bull; 38 MB</div></div><button class="lr-more"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg></button></div>
+            <div class="lib-row" onclick="openStoryDetail('neighbor')"><div class="lr-art" style="background:url('assets/thumb_memories.png') center/cover no-repeat"><div class="lr-dl-badge"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div></div><div class="lr-info"><div class="lr-title">The Neighbor Upstairs</div><div class="lr-meta">Eps 1-3 &bull; 38 MB</div></div><button class="lr-more"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg></button></div>
         </div>
         <div id="lib-history" class="lib-tab-body" style="display:none">
-            <div class="lib-row" onclick="openStoryDetail('barista')"><div class="lr-art" style="background:linear-gradient(135deg,#2a2008,#3d3010)"></div><div class="lr-info"><div class="lr-title">The Barista</div><div class="lr-meta">Finished today</div></div><button class="lr-more"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg></button></div>
-            <div class="lib-row" onclick="openStoryDetail('neighbor')"><div class="lr-art" style="background:linear-gradient(135deg,#0c2e3a,#164050)"></div><div class="lr-info"><div class="lr-title">The Neighbor Upstairs</div><div class="lr-meta">Ep 3 &bull; Yesterday</div></div><button class="lr-more"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg></button></div>
+            <div class="lib-row" onclick="openStoryDetail('barista')"><div class="lr-art" style="background:url('assets/thumb_domestic.png') center/cover no-repeat"></div><div class="lr-info"><div class="lr-title">The Barista</div><div class="lr-meta">Finished today</div></div><button class="lr-more"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg></button></div>
+            <div class="lib-row" onclick="openStoryDetail('neighbor')"><div class="lr-art" style="background:url('assets/thumb_memories.png') center/cover no-repeat"></div><div class="lr-info"><div class="lr-title">The Neighbor Upstairs</div><div class="lr-meta">Ep 3 &bull; Yesterday</div></div><button class="lr-more"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg></button></div>
+            <div class="lib-row" onclick="openStoryDetail('redflag')"><div class="lr-art" style="background:url('assets/thumb_red_flags.png') center/cover no-repeat"></div><div class="lr-info"><div class="lr-title">Red Flags</div><div class="lr-meta">Ep 2 &bull; 3 days ago</div></div><button class="lr-more"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg></button></div>
         </div>
     </div>
 
@@ -363,7 +458,7 @@
             <div class="prof-hero-glow"></div>
             <div class="prof-av-ring"><div class="prof-av">S</div></div>
             <div class="prof-name">Sofia Laurent</div>
-            <div class="prof-handle">@sofia.hush &bull; Since 2025</div>
+            <div class="prof-handle">@sofia.lucid &bull; Since 2025</div>
         </div>
         <div class="prof-stats">
             <div class="ps-card"><div class="ps-val">29</div><div class="ps-label">Stories</div></div>
@@ -374,7 +469,7 @@
         <div class="premium-cta-card">
             <div class="pcc-glow"></div>
             <div class="pcc-body">
-                <div class="pcc-badge">Hush+</div>
+                <div class="pcc-badge">Lucid+</div>
                 <div class="pcc-title">Go Premium</div>
                 <div class="pcc-desc">All voices, exclusive stories, ad-free</div>
                 <button class="pcc-btn">Upgrade</button>
@@ -386,13 +481,13 @@
             <div class="sb-row"><div class="sb-icon"><svg viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v4a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1"/><line x1="12" y1="19" x2="12" y2="22"/></svg></div><div class="sb-text"><div class="sb-name">Voice Preference</div><div class="sb-val">Deep masculine</div></div><svg class="sb-chev" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
             <div class="sb-row"><div class="sb-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></div><div class="sb-text"><div class="sb-name">Dark Mode</div><div class="sb-val">Always on</div></div><div class="toggle on" onclick="this.classList.toggle('on')"><div class="toggle-dot"></div></div></div>
             <div class="sb-row"><div class="sb-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><div class="sb-text"><div class="sb-name">Privacy Lock</div><div class="sb-val">Require Face ID</div></div><div class="toggle" onclick="this.classList.toggle('on')"><div class="toggle-dot"></div></div></div>
-        </div>
+            </div>
         <div class="settings-block">
             <div class="sb-title">Account</div>
             <div class="sb-row"><div class="sb-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div class="sb-text"><div class="sb-name">Email</div><div class="sb-val">sofia.l@email.com</div></div><svg class="sb-chev" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
             <div class="sb-row"><div class="sb-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="sb-text"><div class="sb-name">Subscription</div><div class="sb-val">Free plan</div></div><svg class="sb-chev" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
         </div>
-        <div class="app-footer">Hush v1.0 &bull; Your secret escape</div>
+        <div class="app-footer">LucidFM v1.0 &bull; Dream louder</div>
     </div>
 
 
@@ -401,7 +496,7 @@
          ╚══════════════════════════════════════╝ -->
     <div id="story-detail" class="detail-panel">
         <div class="dp-hero">
-            <div class="dp-hero-bg" id="dp-bg" style="background:linear-gradient(135deg,#0c2e3a,#164050)"></div>
+            <div class="dp-hero-bg" id="dp-bg" style="background:url('assets/thumb_memories.png') center/cover no-repeat"></div>
             <div class="dp-hero-fade"></div>
             <div class="dp-back"><button onclick="closeDetail()"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button></div>
             <div class="dp-hero-info">
@@ -425,6 +520,55 @@
 
 
     <!-- ╔══════════════════════════════════════╗
+         ║        SEE ALL (Home section list)   ║
+         ╚══════════════════════════════════════╝ -->
+    <div id="see-all-panel" class="detail-panel see-all-panel">
+        <div class="see-all-header">
+            <button type="button" class="see-all-back" onclick="closeSeeAll()" aria-label="Back">
+                <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <h1 class="see-all-title" id="see-all-title">Trending</h1>
+        </div>
+        <div class="see-all-body">
+            <div class="see-all-list" id="see-all-list"></div>
+        </div>
+    </div>
+
+
+    <!-- ╔══════════════════════════════════════╗
+         ║        SEARCH RESULTS                ║
+         ╚══════════════════════════════════════╝ -->
+    <div id="screen-search" class="screen">
+        <div class="search-screen-header">
+            <button class="search-back" onclick="closeSearch()"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+            <div class="search-field search-field-full">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <input type="text" id="search-input" placeholder="Stories, voices, vibes..." value="" autocomplete="off">
+            </div>
+        </div>
+        <div class="search-results-section">
+            <h2 class="search-results-label" id="search-results-label">Browse Vibes</h2>
+            <div class="search-browse-vibes" id="search-browse-vibes">
+                <div class="vibe-tiles">
+                    <div class="vt" style="--vt-bg:linear-gradient(135deg,#f472b6,#be185d)" onclick="searchByVibe('passionate')"><div class="vt-icon">&#128293;</div><div class="vt-label">Passionate</div><div class="vt-count">128</div></div>
+                    <div class="vt" style="--vt-bg:linear-gradient(135deg,#06b6d4,#0e7490)" onclick="searchByVibe('late night')"><div class="vt-icon">&#127769;</div><div class="vt-label">Late Night</div><div class="vt-count">94</div></div>
+                    <div class="vt" style="--vt-bg:linear-gradient(135deg,#7c3aed,#5b21b6)" onclick="searchByVibe('romantic')"><div class="vt-icon">&#128156;</div><div class="vt-label">Romantic</div><div class="vt-count">112</div></div>
+                    <div class="vt" style="--vt-bg:linear-gradient(135deg,#fbbf24,#d97706)" onclick="searchByVibe('dominant')"><div class="vt-icon">&#9939;&#65039;</div><div class="vt-label">Dominant</div><div class="vt-count">67</div></div>
+                    <div class="vt" style="--vt-bg:linear-gradient(135deg,#10b981,#059669)" onclick="searchByVibe('comfort')"><div class="vt-icon">&#128154;</div><div class="vt-label">Comfort</div><div class="vt-count">85</div></div>
+                    <div class="vt" style="--vt-bg:linear-gradient(135deg,#ef4444,#b91c1c)" onclick="searchByVibe('taboo')"><div class="vt-icon">&#128520;</div><div class="vt-label">Taboo</div><div class="vt-count">53</div></div>
+                </div>
+            </div>
+            <div class="search-results-grid" id="search-results-grid" style="display:none"></div>
+            <div class="search-results-empty" id="search-results-empty" style="display:none">
+                <div class="search-empty-icon">&#128269;</div>
+                <p>No stories match your search.</p>
+                <p class="search-empty-hint">Try vibes like Romantic, ASMR, or Passionate</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ╔══════════════════════════════════════╗
          ║        PLAYER                        ║
          ╚══════════════════════════════════════╝ -->
     <div id="player" class="player-panel">
@@ -437,7 +581,7 @@
                 <button class="pl-menu" onclick="openSleep()"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg></button>
             </div>
             <div class="pl-artwork">
-                <div class="pl-art-card" id="pl-art" style="background:linear-gradient(135deg,#0c2e3a,#164050)">
+                <div class="pl-art-card" id="pl-art" style="background:url('assets/thumb_memories.png') center/cover no-repeat">
                     <div class="pl-waveform" id="pl-waveform"></div>
                 </div>
             </div>
@@ -492,7 +636,7 @@
          ╚══════════════════════════════════════╝ -->
     <div class="mini" id="mini" onclick="openPlayer()">
         <div class="mini-prog" id="mini-prog" style="width:35%"></div>
-        <div class="mini-art" id="mini-art" style="background:linear-gradient(135deg,#0c2e3a,#164050)"></div>
+        <div class="mini-art" id="mini-art" style="background:url('assets/thumb_memories.png') center/cover no-repeat"></div>
         <div class="mini-info"><div class="mini-title" id="mini-title">The Neighbor Upstairs</div><div class="mini-sub" id="mini-sub">Ep 3 &bull; Thin Walls</div></div>
         <div class="mini-ctrl" onclick="event.stopPropagation()"><button class="mini-pp" onclick="togglePlay()"><svg viewBox="0 0 24 24" id="pp-mini"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg></button></div>
     </div>
@@ -513,23 +657,27 @@
          JS
          ═══════════════════════════════════════ -->
     <script>
-    const stories={neighbor:{title:'The Neighbor Upstairs',bg:'linear-gradient(135deg,#0c2e3a,#164050)',plBg:'linear-gradient(180deg,#0c2e3a 0%,#070d10 60%)',artist:'Caleb Storm',tags:['Forbidden','Proximity','Tension'],meta:'8 Episodes \u2022 3h 28m \u2022 Caleb Storm',live:'3.1K listening',desc:'The walls are paper-thin. You hear everything\u2014his music, his phone calls, his laughter. When the plumbing breaks and he knocks on your door shirtless at midnight, you realize the real problem isn\u2019t the noise. It\u2019s the tension.',episodes:[{title:'Move-In Day',dur:'24:30'},{title:'The Knock',dur:'26:10'},{title:'Thin Walls',dur:'28:00',current:true},{title:'The Laundry Room',dur:'25:40'},{title:'Power Outage',dur:'27:20'},{title:'The Balcony',dur:'23:50'},{title:'Noise Complaint',dur:'26:00'},{title:'Open Door',dur:'29:10'}]},photographer:{title:'The Photographer',bg:'linear-gradient(135deg,#1a0a20,#2d1438)',plBg:'linear-gradient(180deg,#1a0a20 0%,#070d10 60%)',artist:'Nico Voss',tags:['Art','Vulnerable','Intimate'],meta:'10 Episodes \u2022 4h 12m \u2022 Nico Voss',live:'4.8K listening',desc:'He asks you to model for his gallery show. "Just be natural," he says, adjusting the lighting. Each session peels away another layer\u2014of clothing, of walls, of pretense. The camera sees everything. So does he.',episodes:[{title:'The Studio',dur:'24:10'},{title:'First Shoot',dur:'26:30'},{title:'Natural Light',dur:'25:00'},{title:'The Darkroom',dur:'27:20'},{title:'Polaroids',dur:'24:40'},{title:'Gallery Night',dur:'28:10'},{title:'After Hours',dur:'25:30'},{title:'The Print',dur:'26:00'},{title:'Exposed',dur:'23:50'},{title:'Developed',dur:'29:00'}]},professor:{title:'Office Hours',bg:'linear-gradient(135deg,#2a1430,#3d1e45)',plBg:'linear-gradient(180deg,#2a1430 0%,#070d10 60%)',artist:'Caleb Storm',tags:['Professor','Forbidden','Intellectual'],meta:'9 Episodes \u2022 3h 50m \u2022 Caleb Storm',live:'3.5K listening',desc:'Professor Calloway\u2019s lectures on romantic poetry hit different when he\u2019s quoting Neruda while looking directly at you. You keep finding excuses to visit during office hours. He keeps letting you stay too long.',episodes:[{title:'First Lecture',dur:'24:30',current:true},{title:'The Citation',dur:'26:10'},{title:'Office Hours',dur:'25:20'},{title:'The Conference',dur:'27:00'},{title:'Late Paper',dur:'24:50'},{title:'The Reading',dur:'28:30'},{title:'Tenure Review',dur:'25:10'},{title:'Sabbatical',dur:'26:40'},{title:'Epilogue',dur:'27:30'}]},dancer:{title:'After the Show',bg:'linear-gradient(135deg,#200a14,#381020)',plBg:'linear-gradient(180deg,#200a14 0%,#070d10 60%)',artist:'Jade Ellis',tags:['Dancer','Passionate','Physical'],meta:'7 Episodes \u2022 2h 40m \u2022 Jade Ellis',live:'2.1K listening',desc:'She performs like she\u2019s the only person in the room. Backstage, she\u2019s all adrenaline and sweat. When she pulls you past the stage door, the real performance begins.',episodes:[{title:'Front Row',dur:'22:30'},{title:'Backstage',dur:'24:10'},{title:'The Rehearsal',dur:'26:40'},{title:'Opening Night',dur:'23:20'},{title:'The Lift',dur:'25:50'},{title:'Encore',dur:'27:10'},{title:'Final Bow',dur:'24:00'}]},barista:{title:'The Barista',bg:'linear-gradient(135deg,#2a2008,#3d3010)',plBg:'linear-gradient(180deg,#2a2008 0%,#070d10 60%)',artist:'Nico Voss',tags:['Coffee Shop','Sweet','Slow Build'],meta:'6 Episodes \u2022 2h 15m \u2022 Nico Voss',live:'5.4K listening',desc:'Every morning, same order, same smile. He always writes something extra on your cup. Today it\u2019s a phone number. Tomorrow it\u2019s a date. Next week, you\u2019re in his apartment above the shop.',episodes:[{title:'Regular Order',dur:'22:10'},{title:'The Note',dur:'24:30'},{title:'After Close',dur:'23:45'},{title:'His Place',dur:'25:20'},{title:'Morning Shift',dur:'22:00'},{title:'Our Table',dur:'24:30'}]},lifeguard:{title:'Lifeguard Summer',bg:'linear-gradient(135deg,#0a2030,#143848)',plBg:'linear-gradient(180deg,#0a2030 0%,#070d10 60%)',artist:'Nico Voss',tags:['Beach','Playful','Summer'],meta:'6 Episodes \u2022 2h 30m \u2022 Nico Voss',live:'1.8K listening',desc:'Golden skin, aviator sunglasses, and a whistle around his neck. He watches the ocean all day. At night, he watches you.',episodes:[{title:'Day One',dur:'24:10'},{title:'Sunscreen',dur:'26:30'},{title:'The Bonfire',dur:'25:00'},{title:'Night Swim',dur:'24:20'},{title:'The Tower',dur:'26:00'},{title:'Last Day',dur:'25:30'}]},chef:{title:'Private Chef',bg:'linear-gradient(135deg,#2a1508,#402010)',plBg:'linear-gradient(180deg,#2a1508 0%,#070d10 60%)',artist:'Jade Ellis',tags:['Sensual','Cooking','Domestic'],meta:'5 Episodes \u2022 2h \u2022 Jade Ellis',live:'1.2K listening',desc:'She cooks like she\u2019s making love to the ingredients. When she feeds you from the spoon and watches your reaction, the kitchen becomes the most dangerous room in the house.',episodes:[{title:'The Tasting',dur:'24:30'},{title:'Knife Skills',dur:'22:10'},{title:'Simmer',dur:'26:00'},{title:'Dessert',dur:'25:15'},{title:'Breakfast',dur:'24:00'}]},penpal:{title:'Dear Pen Pal',bg:'linear-gradient(135deg,#0a0a28,#141440)',plBg:'linear-gradient(180deg,#0a0a28 0%,#070d10 60%)',artist:'Caleb Storm',tags:['Letters','Longing','Emotional'],meta:'8 Episodes \u2022 3h 20m \u2022 Caleb Storm',live:'2.6K listening',desc:'You\u2019ve never met. But his letters make you feel things no one in person ever has. Each envelope is more daring than the last. When he finally writes "I\u2019m coming to your city"\u2014your heart stops.',episodes:[{title:'First Letter',dur:'24:10'},{title:'Dear Stranger',dur:'26:30'},{title:'The Photograph',dur:'25:00'},{title:'Confessions',dur:'27:20'},{title:'Come Closer',dur:'24:40'},{title:'The Visit',dur:'28:10'},{title:'Face to Face',dur:'25:30'},{title:'Yours',dur:'26:00'}]},'whisper-rain':{title:'Whisper & Rain',bg:'linear-gradient(135deg,#070d18,#0a1428)',plBg:'linear-gradient(180deg,#070d18 0%,#070d10 60%)',artist:'Caleb Storm',tags:['ASMR','Sleep','Rain'],meta:'4 Episodes \u2022 1h 40m \u2022 Caleb Storm',live:'4.5K listening',desc:'Rain on the window. His voice against your ear. Nothing else matters.',episodes:[{title:'The Storm',dur:'24:10'},{title:'Stay Close',dur:'26:30'},{title:'Morning Drizzle',dur:'25:20'},{title:'Clear',dur:'24:00'}]},goodnight:{title:'Goodnight, Love',bg:'linear-gradient(135deg,#100a1e,#1a1030)',plBg:'linear-gradient(180deg,#100a1e 0%,#070d10 60%)',artist:'Nico Voss',tags:['Comfort','Gentle','Bedtime'],meta:'5 Episodes \u2022 2h 10m \u2022 Nico Voss',live:'3.2K listening',desc:'Soft words before sleep. He tells you about his day, asks about yours, and says all the things you need to hear.',episodes:[{title:'How Was Your Day',dur:'24:30'},{title:'I\u2019m Right Here',dur:'26:10'},{title:'Tell Me',dur:'25:20'},{title:'Stay',dur:'27:00'},{title:'Good Morning',dur:'24:50'}]},'cabin-night':{title:'Cabin Nights',bg:'linear-gradient(135deg,#0d1008,#1a2010)',plBg:'linear-gradient(180deg,#0d1008 0%,#070d10 60%)',artist:'Jade Ellis',tags:['Fireplace','Cozy','Isolated'],meta:'4 Episodes \u2022 1h 45m \u2022 Jade Ellis',live:'1.9K listening',desc:'Snowed in. Just the two of you. A fire, a blanket, and nowhere to be.',episodes:[{title:'Arrival',dur:'24:10'},{title:'By the Fire',dur:'28:00'},{title:'Snowbound',dur:'26:30'},{title:'Thaw',dur:'25:00'}]}};
+    const stories={neighbor:{title:'The Neighbor Upstairs',img:'assets/thumb_memories.png',plBg:'linear-gradient(180deg,#0c2e3a 0%,#070d10 60%)',artist:'Caleb Storm',tags:['Forbidden','Proximity','Tension'],meta:'8 Episodes \u2022 3h 28m \u2022 Caleb Storm',live:'3.1K listening',desc:'The walls are paper-thin. You hear everything\u2014his music, his phone calls, his laughter. When the plumbing breaks and he knocks on your door shirtless at midnight, you realize the real problem isn\u2019t the noise. It\u2019s the tension.',episodes:[{title:'Move-In Day',dur:'24:30'},{title:'The Knock',dur:'26:10'},{title:'Thin Walls',dur:'28:00',current:true},{title:'The Laundry Room',dur:'25:40'},{title:'Power Outage',dur:'27:20'},{title:'The Balcony',dur:'23:50'},{title:'Noise Complaint',dur:'26:00'},{title:'Open Door',dur:'29:10'}]},photographer:{title:'The Photographer',img:'assets/thumb_sensory.png',plBg:'linear-gradient(180deg,#1a0a20 0%,#070d10 60%)',artist:'Nico Voss',tags:['Art','Vulnerable','Intimate'],meta:'10 Episodes \u2022 4h 12m \u2022 Nico Voss',live:'4.8K listening',desc:'He asks you to model for his gallery show. "Just be natural," he says, adjusting the lighting. Each session peels away another layer\u2014of clothing, of walls, of pretense. The camera sees everything. So does he.',episodes:[{title:'The Studio',dur:'24:10'},{title:'First Shoot',dur:'26:30'},{title:'Natural Light',dur:'25:00'},{title:'The Darkroom',dur:'27:20'},{title:'Polaroids',dur:'24:40'},{title:'Gallery Night',dur:'28:10'},{title:'After Hours',dur:'25:30'},{title:'The Print',dur:'26:00'},{title:'Exposed',dur:'23:50'},{title:'Developed',dur:'29:00'}]},professor:{title:'Office Hours',img:'assets/thumb_green_flag.png',plBg:'linear-gradient(180deg,#2a1430 0%,#070d10 60%)',artist:'Caleb Storm',tags:['Professor','Forbidden','Intellectual'],meta:'9 Episodes \u2022 3h 50m \u2022 Caleb Storm',live:'3.5K listening',desc:'Professor Calloway\u2019s lectures on romantic poetry hit different when he\u2019s quoting Neruda while looking directly at you. You keep finding excuses to visit during office hours. He keeps letting you stay too long.',episodes:[{title:'First Lecture',dur:'24:30',current:true},{title:'The Citation',dur:'26:10'},{title:'Office Hours',dur:'25:20'},{title:'The Conference',dur:'27:00'},{title:'Late Paper',dur:'24:50'},{title:'The Reading',dur:'28:30'},{title:'Tenure Review',dur:'25:10'},{title:'Sabbatical',dur:'26:40'},{title:'Epilogue',dur:'27:30'}]},dancer:{title:'After the Show',img:'assets/thumb_situationship.png',plBg:'linear-gradient(180deg,#200a14 0%,#070d10 60%)',artist:'Jade Ellis',tags:['Dancer','Passionate','Physical'],meta:'7 Episodes \u2022 2h 40m \u2022 Jade Ellis',live:'2.1K listening',desc:'She performs like she\u2019s the only person in the room. Backstage, she\u2019s all adrenaline and sweat. When she pulls you past the stage door, the real performance begins.',episodes:[{title:'Front Row',dur:'22:30'},{title:'Backstage',dur:'24:10'},{title:'The Rehearsal',dur:'26:40'},{title:'Opening Night',dur:'23:20'},{title:'The Lift',dur:'25:50'},{title:'Encore',dur:'27:10'},{title:'Final Bow',dur:'24:00'}]},barista:{title:'The Barista',img:'assets/thumb_domestic.png',plBg:'linear-gradient(180deg,#2a2008 0%,#070d10 60%)',artist:'Nico Voss',tags:['Coffee Shop','Sweet','Slow Build'],meta:'6 Episodes \u2022 2h 15m \u2022 Nico Voss',live:'5.4K listening',desc:'Every morning, same order, same smile. He always writes something extra on your cup. Today it\u2019s a phone number. Tomorrow it\u2019s a date. Next week, you\u2019re in his apartment above the shop.',episodes:[{title:'Regular Order',dur:'22:10'},{title:'The Note',dur:'24:30'},{title:'After Close',dur:'23:45'},{title:'His Place',dur:'25:20'},{title:'Morning Shift',dur:'22:00'},{title:'Our Table',dur:'24:30'}]},lifeguard:{title:'Lifeguard Summer',img:'assets/thumb_caught.png',plBg:'linear-gradient(180deg,#0a2030 0%,#070d10 60%)',artist:'Nico Voss',tags:['Beach','Playful','Summer'],meta:'6 Episodes \u2022 2h 30m \u2022 Nico Voss',live:'1.8K listening',desc:'Golden skin, aviator sunglasses, and a whistle around his neck. He watches the ocean all day. At night, he watches you.',episodes:[{title:'Day One',dur:'24:10'},{title:'Sunscreen',dur:'26:30'},{title:'The Bonfire',dur:'25:00'},{title:'Night Swim',dur:'24:20'},{title:'The Tower',dur:'26:00'},{title:'Last Day',dur:'25:30'}]},chef:{title:'Private Chef',img:'assets/thumb_slow_burn.png',plBg:'linear-gradient(180deg,#2a1508 0%,#070d10 60%)',artist:'Jade Ellis',tags:['Sensual','Cooking','Domestic'],meta:'5 Episodes \u2022 2h \u2022 Jade Ellis',live:'1.2K listening',desc:'She cooks like she\u2019s making love to the ingredients. When she feeds you from the spoon and watches your reaction, the kitchen becomes the most dangerous room in the house.',episodes:[{title:'The Tasting',dur:'24:30'},{title:'Knife Skills',dur:'22:10'},{title:'Simmer',dur:'26:00'},{title:'Dessert',dur:'25:15'},{title:'Breakfast',dur:'24:00'}]},penpal:{title:'Dear Pen Pal',img:'assets/thumb_not_her.png',plBg:'linear-gradient(180deg,#0a0a28 0%,#070d10 60%)',artist:'Caleb Storm',tags:['Letters','Longing','Emotional'],meta:'8 Episodes \u2022 3h 20m \u2022 Caleb Storm',live:'2.6K listening',desc:'You\u2019ve never met. But his letters make you feel things no one in person ever has. Each envelope is more daring than the last. When he finally writes "I\u2019m coming to your city"\u2014your heart stops.',episodes:[{title:'First Letter',dur:'24:10'},{title:'Dear Stranger',dur:'26:30'},{title:'The Photograph',dur:'25:00'},{title:'Confessions',dur:'27:20'},{title:'Come Closer',dur:'24:40'},{title:'The Visit',dur:'28:10'},{title:'Face to Face',dur:'25:30'},{title:'Yours',dur:'26:00'}]},'whisper-rain':{title:'Whisper & Rain',img:'assets/thumb_messy_hair.png',plBg:'linear-gradient(180deg,#070d18 0%,#070d10 60%)',artist:'Caleb Storm',tags:['ASMR','Sleep','Rain'],meta:'4 Episodes \u2022 1h 40m \u2022 Caleb Storm',live:'4.5K listening',desc:'Rain on the window. His voice against your ear. Nothing else matters.',episodes:[{title:'The Storm',dur:'24:10'},{title:'Stay Close',dur:'26:30'},{title:'Morning Drizzle',dur:'25:20'},{title:'Clear',dur:'24:00'}]},goodnight:{title:'Goodnight, Love',img:'assets/thumb_hurt_comfort.png',plBg:'linear-gradient(180deg,#100a1e 0%,#070d10 60%)',artist:'Nico Voss',tags:['Comfort','Gentle','Bedtime'],meta:'5 Episodes \u2022 2h 10m \u2022 Nico Voss',live:'3.2K listening',desc:'Soft words before sleep. He tells you about his day, asks about yours, and says all the things you need to hear.',episodes:[{title:'How Was Your Day',dur:'24:30'},{title:'I\u2019m Right Here',dur:'26:10'},{title:'Tell Me',dur:'25:20'},{title:'Stay',dur:'27:00'},{title:'Good Morning',dur:'24:50'}]},'cabin-night':{title:'Cabin Nights',img:'assets/thumb_mirror.png',plBg:'linear-gradient(180deg,#0d1008 0%,#070d10 60%)',artist:'Jade Ellis',tags:['Fireplace','Cozy','Isolated'],meta:'4 Episodes \u2022 1h 45m \u2022 Jade Ellis',live:'1.9K listening',desc:'Snowed in. Just the two of you. A fire, a blanket, and nowhere to be.',episodes:[{title:'Arrival',dur:'24:10'},{title:'By the Fire',dur:'28:00'},{title:'Snowbound',dur:'26:30'},{title:'Thaw',dur:'25:00'}]},hockey:{title:'Ice & Fire',img:'assets/thumb_sporty_bf.png',plBg:'linear-gradient(180deg,#0a1830 0%,#070d10 60%)',artist:'Caleb Storm',tags:['Hockey','Rivals','Tension'],meta:'6 Episodes \u2022 2h 50m \u2022 Caleb Storm',live:'2.8K listening',desc:'He\u2019s the rival team\u2019s captain. You\u2019re supposed to hate everything about him\u2014the cocky grin, the way he slams into the boards. But after the final buzzer, alone in the tunnel, hate starts to feel like something else entirely.',episodes:[{title:'Game Day',dur:'24:30'},{title:'The Penalty Box',dur:'26:10'},{title:'Overtime',dur:'28:00'},{title:'The Locker Room',dur:'25:40'},{title:'Practice',dur:'27:20'},{title:'Championship',dur:'29:10'}]},redflag:{title:'Red Flags',img:'assets/thumb_red_flags.png',plBg:'linear-gradient(180deg,#1a0a14 0%,#070d10 60%)',artist:'Jade Ellis',tags:['Bad Boy','Dangerous','Thrilling'],meta:'7 Episodes \u2022 3h 10m \u2022 Jade Ellis',live:'3.6K listening',desc:'Everyone warned you. The leather jacket, the motorcycle, the way he watches you from across the room like you\u2019re the only dare worth taking. You promised yourself you\u2019d stay away. That lasted about three seconds.',episodes:[{title:'First Sight',dur:'25:00'},{title:'The Ride',dur:'27:20'},{title:'Warning Signs',dur:'26:10'},{title:'Past Midnight',dur:'28:00'},{title:'The Confession',dur:'24:30'},{title:'Worth It',dur:'27:40'},{title:'Yours',dur:'25:50'}]},marked:{title:'Leave a Mark',img:'assets/thumb_leave_mark.png',plBg:'linear-gradient(180deg,#200a10 0%,#070d10 60%)',artist:'Caleb Storm',tags:['Possessive','Intense','Claiming'],meta:'5 Episodes \u2022 2h 20m \u2022 Caleb Storm',live:'4.1K listening',desc:'He traces your skin like he\u2019s memorizing a map only he can read. Lipstick on his collar, bruises on your neck\u2014every mark is a love letter written in the only language that matters.',episodes:[{title:'The Touch',dur:'26:30'},{title:'Closer',dur:'28:10'},{title:'Bruise',dur:'27:00'},{title:'Claimed',dur:'25:30'},{title:'Morning After',dur:'24:20'}]}};
 
     let playing=true,spd=1.0,spds=[0.5,0.75,1.0,1.25,1.5,2.0],spdI=2,wvI=null;
 
-    function navigateTo(s){document.querySelectorAll('.screen').forEach(e=>e.classList.remove('active'));document.getElementById('screen-'+s).classList.add('active');document.querySelectorAll('.bnav-tab').forEach(n=>n.classList.remove('active'));document.querySelector(`.bnav-tab[data-screen="${s}"]`).classList.add('active');window.scrollTo({top:0,behavior:'smooth'});initObs();}
+    function navigateTo(s){document.querySelectorAll('.screen').forEach(e=>e.classList.remove('active'));const el=document.getElementById('screen-'+s);if(el)el.classList.add('active');document.querySelectorAll('.bnav-tab').forEach(n=>n.classList.remove('active'));const tab=document.querySelector(`.bnav-tab[data-screen="${s}"]`);if(tab)tab.classList.add('active');window.scrollTo({top:0,behavior:'smooth'});initObs();}
+
+    const homeSections={resume:{title:'Pick up where you left',keys:['neighbor','professor','barista']},trending:{title:'Trending',keys:['marked','neighbor','photographer','hockey','dancer','redflag','barista']},forYou:{title:'For You',keys:['lifeguard','chef','penpal','professor','neighbor','barista','marked','photographer','goodnight','cabin-night']},voices:{title:'Popular Voices',keys:['neighbor','photographer','dancer','barista','marked','redflag']},windDown:{title:'Wind Down',keys:['whisper-rain','goodnight','cabin-night']}};
+    function openSeeAll(sectionId){var sec=homeSections[sectionId];if(!sec)return;document.getElementById('see-all-title').textContent=sec.title;var list=document.getElementById('see-all-list');var playSvg='<svg viewBox="0 0 24 24"><polygon points="7,4 19,12 7,20"/></svg>';var heartSvg='<svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>';list.innerHTML=sec.keys.map(function(k){var s=stories[k];if(!s)return'';var sub=(s.tags&&s.tags.length)?s.tags.slice(0,2).join(' \u2022 '):'';var metaParts=(s.meta||'').split('\u2022');var dur=metaParts[1]?metaParts[1].trim():'';var liveText=(s.live||'').replace(' listening','').trim()||'\u2014';return'<div class="poster-card anim-in visible" onclick="openStoryDetail(\''+k+'\');closeSeeAll();"><div class="pc-img" style="background:url(\''+(s.img||'')+'\') center/cover no-repeat"><div class="pc-hover-play">'+playSvg+'</div><div class="pc-time">'+dur+'</div></div><div class="pc-info"><div class="pc-title">'+(s.title||'')+'</div><div class="pc-sub">'+sub+'</div><div class="pc-hearts">'+heartSvg+'<span>'+liveText+'</span></div></div></div>';}).join('');document.getElementById('see-all-panel').classList.add('open');document.body.style.overflow='hidden';}
+    function closeSeeAll(){document.getElementById('see-all-panel').classList.remove('open');document.body.style.overflow='';}
 
     document.querySelectorAll('.vibe-pill').forEach(p=>{p.addEventListener('click',()=>{document.querySelectorAll('.vibe-pill').forEach(x=>x.classList.remove('active'));p.classList.add('active');});});
 
     document.querySelectorAll('.lt').forEach(t=>{t.addEventListener('click',()=>{document.querySelectorAll('.lt').forEach(x=>x.classList.remove('active'));t.classList.add('active');document.querySelectorAll('.lib-tab-body').forEach(c=>{c.style.display='none';c.classList.remove('active');});const el=document.getElementById('lib-'+t.dataset.tab);el.style.display='block';el.classList.add('active');});});
 
-    function openStoryDetail(k){const s=stories[k];if(!s)return;document.getElementById('dp-bg').style.background=s.bg;document.getElementById('dp-title').textContent=s.title;document.getElementById('dp-meta').textContent=s.meta;document.getElementById('dp-desc').textContent=s.desc;document.getElementById('dp-live-text').textContent=s.live;document.getElementById('dp-tags').innerHTML=s.tags.map(t=>`<span class="dp-tag">${t}</span>`).join('');document.getElementById('dp-eps').innerHTML=s.episodes.map((e,i)=>`<div class="dp-ep ${e.current?'current':''}" onclick="playEp('${k}',${i})"><div class="dp-ep-n">${i+1}</div><div class="dp-ep-info"><div class="dp-ep-t">${e.title}</div><div class="dp-ep-s">${e.current?'Playing now':'Ep '+(i+1)}</div></div><div class="dp-ep-d">${e.dur}</div></div>`).join('');const ci=s.episodes.findIndex(e=>e.current);document.getElementById('dp-play-label').textContent=ci>=0?'Continue Ep '+(ci+1):'Play Episode 1';document.getElementById('story-detail').classList.add('open');document.body.style.overflow='hidden';}
+    function openStoryDetail(k){const s=stories[k];if(!s)return;document.getElementById('dp-bg').style.background="url('"+s.img+"') center/cover no-repeat";document.getElementById('dp-title').textContent=s.title;document.getElementById('dp-meta').textContent=s.meta;document.getElementById('dp-desc').textContent=s.desc;document.getElementById('dp-live-text').textContent=s.live;document.getElementById('dp-tags').innerHTML=s.tags.map(t=>`<span class="dp-tag">${t}</span>`).join('');document.getElementById('dp-eps').innerHTML=s.episodes.map((e,i)=>`<div class="dp-ep ${e.current?'current':''}" onclick="playEp('${k}',${i})"><div class="dp-ep-n">${i+1}</div><div class="dp-ep-info"><div class="dp-ep-t">${e.title}</div><div class="dp-ep-s">${e.current?'Playing now':'Ep '+(i+1)}</div></div><div class="dp-ep-d">${e.dur}</div></div>`).join('');const ci=s.episodes.findIndex(e=>e.current);document.getElementById('dp-play-label').textContent=ci>=0?'Continue Ep '+(ci+1):'Play Episode 1';document.getElementById('story-detail').classList.add('open');document.body.style.overflow='hidden';}
 
     function closeDetail(){document.getElementById('story-detail').classList.remove('open');document.body.style.overflow='';}
 
-    function playEp(k,i){const s=stories[k];if(!s)return;const e=s.episodes[i];updMini(s.title,s.bg,s.artist,`Ep ${i+1} \u2022 ${e.title}`);document.getElementById('pl-art').style.background=s.bg;document.getElementById('pl-bg').style.background=s.plBg;document.getElementById('pl-title').textContent=s.title;document.getElementById('pl-artist').textContent=s.artist;document.getElementById('pl-ep-label').textContent=`Episode ${i+1} \u2022 ${e.title}`;closeDetail();openPlayer();}
+    function playEp(k,i){const s=stories[k];if(!s)return;const e=s.episodes[i];updMini(s.title,s.img,s.artist,`Ep ${i+1} \u2022 ${e.title}`);document.getElementById('pl-art').style.background="url('"+s.img+"') center/cover no-repeat";document.getElementById('pl-bg').style.background=s.plBg;document.getElementById('pl-title').textContent=s.title;document.getElementById('pl-artist').textContent=s.artist;document.getElementById('pl-ep-label').textContent=`Episode ${i+1} \u2022 ${e.title}`;closeDetail();openPlayer();}
 
-    function updMini(t,bg,a,sub){document.getElementById('mini-title').textContent=t;document.getElementById('mini-sub').textContent=sub;document.getElementById('mini-art').style.background=bg;}
+    function updMini(t,img,a,sub){document.getElementById('mini-title').textContent=t;document.getElementById('mini-sub').textContent=sub;document.getElementById('mini-art').style.background="url('"+img+"') center/cover no-repeat";}
 
     function openPlayer(){document.getElementById('player').classList.add('open');document.body.style.overflow='hidden';startWv();}
     function closePlayer(){document.getElementById('player').classList.remove('open');document.body.style.overflow='';stopWv();}
@@ -560,6 +708,29 @@
     function setGreeting(){const h=new Date().getHours();let g='Good evening,';if(h<12)g='Good morning,';else if(h<17)g='Good afternoon,';const el=document.getElementById('greeting-label');if(el)el.textContent=g;}
 
     setGreeting();initWv();initParticles();initObs();
+
+    /* Onboarding */
+    const onbSlides=document.querySelectorAll('.onb-slide');
+    const onbDotsEl=document.getElementById('onb-dots');
+    const onbNextBtn=document.getElementById('onb-next');
+    let onbIndex=0;
+    function showOnboardingSlide(i){onbIndex=Math.max(0,Math.min(i,onbSlides.length-1));onbSlides.forEach((s,j)=>{s.classList.toggle('active',j===onbIndex);});if(onbDotsEl){onbDotsEl.innerHTML='';onbSlides.forEach((_,j)=>{const d=document.createElement('div');d.className='onb-dot'+(j===onbIndex?' active':'');onbDotsEl.appendChild(d);});}onbNextBtn.textContent=onbIndex===onbSlides.length-1?'Start':'Next';}
+    function nextOnboardingSlide(){if(onbIndex<onbSlides.length-1)showOnboardingSlide(onbIndex+1);else finishOnboarding();}
+    function finishOnboarding(){document.getElementById('onboarding').classList.add('hidden');}
+    function initOnboarding(){
+      var onbEl=document.getElementById('onboarding');
+      if(!onbEl)return;
+      onbEl.classList.remove('hidden');
+      if(onbDotsEl){onbDotsEl.innerHTML='';onbSlides.forEach(function(_,i){var d=document.createElement('div');d.className='onb-dot'+(i===0?' active':'');onbDotsEl.appendChild(d);});}
+      if(onbNextBtn)onbNextBtn.textContent=onbSlides.length>1?'Next':'Get started';
+    }
+    initOnboarding();
+
+    function openSearch(){document.querySelectorAll('.screen').forEach(e=>e.classList.remove('active'));document.getElementById('screen-search').classList.add('active');document.querySelectorAll('.bnav-tab').forEach(n=>n.classList.remove('active'));document.getElementById('search-input').value='';document.getElementById('search-results-label').textContent='Browse Vibes';document.getElementById('search-browse-vibes').style.display='block';document.getElementById('search-results-grid').style.display='none';document.getElementById('search-results-empty').style.display='none';setTimeout(()=>document.getElementById('search-input').focus(),100);}
+    function closeSearch(){navigateTo('explore');}
+    function searchByVibe(q){const inp=document.getElementById('search-input');inp.value=q;runSearch();}
+    function runSearch(){const q=document.getElementById('search-input').value.trim().toLowerCase();const grid=document.getElementById('search-results-grid');const browse=document.getElementById('search-browse-vibes');const empty=document.getElementById('search-results-empty');const label=document.getElementById('search-results-label');if(!q){label.textContent='Browse Vibes';browse.style.display='block';grid.style.display='none';empty.style.display='none';return;}label.textContent='Results';browse.style.display='none';const keys=Object.keys(stories).filter(k=>{const s=stories[k];const t=(s.title+s.artist+(s.tags||[]).join(' ')).toLowerCase();return t.includes(q);});if(keys.length===0){grid.style.display='none';empty.style.display='block';return;}empty.style.display='none';grid.style.display='grid';grid.innerHTML=keys.map(k=>{const s=stories[k];const sub=(s.tags||[]).slice(0,2).join(' \u2022 ');const dur=(s.meta||'').split('\u2022')[1];return`<div class="poster-card anim-in" onclick="openStoryDetail('${k}')"><div class="pc-img" style="background:url('${s.img}') center/cover no-repeat"><div class="pc-hover-play"><svg viewBox="0 0 24 24"><polygon points="7,4 19,12 7,20"/></svg></div><div class="pc-time">${dur?dur.trim():''}</div></div><div class="pc-info"><div class="pc-title">${s.title}</div><div class="pc-sub">${sub}</div><div class="pc-hearts"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>${(s.live||'').replace(' listening','')}</span></div></div></div>`}).join('');}
+    (function(){const exploreSearch=document.querySelector('#screen-explore .search-field input');if(exploreSearch)exploreSearch.addEventListener('focus',openSearch);document.getElementById('search-input').addEventListener('input',runSearch);})();
     </script>
 
 </body>
