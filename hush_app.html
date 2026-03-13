@@ -3,14 +3,52 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
-    <title>LucidFM</title>
-    <meta name="description" content="LucidFM — Dream louder. Premium intimate audio stories.">
-    <meta name="theme-color" content="#070d10">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover, user-scalable=yes">
+    <title>StoryVibe</title>
+    <meta name="description" content="StoryVibe — Dream louder. Premium intimate audio stories.">
+    <meta name="theme-color" content="#0a080c">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    <base href="./">
     <link rel="stylesheet" href="hush_app.css">
 </head>
 
 <body>
+
+    <!-- ╔══════════════════════════════════════╗
+         ║        SPLASH SCREEN                 ║
+         ╚══════════════════════════════════════╝ -->
+    <div id="splash" class="splash">
+        <div class="splash-bg">
+            <div class="splash-overlay"></div>
+            <div class="splash-orb splash-orb-1"></div>
+            <div class="splash-orb splash-orb-2"></div>
+            <div class="splash-orb splash-orb-3"></div>
+        </div>
+        <div class="splash-content">
+            <div class="splash-sparkle" aria-hidden="true">
+                <svg viewBox="0 0 24 24" class="splash-sparkle-icon"><path d="M12 2L13.5 10.5L22 12L13.5 13.5L12 22L10.5 13.5L2 12L10.5 10.5L12 2Z" fill="currentColor"/></svg>
+                <div class="splash-sparkle-glow"></div>
+            </div>
+            <h1 class="splash-title">
+                <span class="splash-title-line">
+                    <svg class="splash-welcome-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L13.5 10.5L22 12L13.5 13.5L12 22L10.5 13.5L2 12L10.5 10.5L12 2Z" fill="currentColor"/></svg>
+                    Welcome to the
+                </span>
+                <span class="splash-title-accent">Next Era of Stories.</span>
+            </h1>
+            <p class="splash-tagline">Your next obsession starts here.</p>
+            <div class="splash-waveform">
+                <span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="splash-progress-wrap">
+            <div class="splash-progress"><div class="splash-progress-fill"></div></div>
+        </div>
+    </div>
 
     <!-- ╔══════════════════════════════════════╗
          ║        ONBOARDING                    ║
@@ -25,7 +63,7 @@
                     <div class="onb-orb onb-orb-3"></div>
                 </div>
                 <div class="onb-logo">L</div>
-                <h1 class="onb-brand">LucidFM</h1>
+                <h1 class="onb-brand">StoryVibe</h1>
                 <p class="onb-tagline">Dream louder.</p>
                 <p class="onb-desc">Premium intimate audio stories, made for you.</p>
                 <div class="onb-waveform-demo">
@@ -79,7 +117,7 @@
         <header class="hdr">
             <div class="hdr-brand">
                 <div class="hdr-logo">L</div>
-                <span class="hdr-wordmark">LucidFM</span>
+                <span class="hdr-wordmark">StoryVibe</span>
             </div>
             <div class="hdr-actions">
                 <button class="hdr-icon-btn" aria-label="Notifications">
@@ -458,7 +496,7 @@
             <div class="prof-hero-glow"></div>
             <div class="prof-av-ring"><div class="prof-av">S</div></div>
             <div class="prof-name">Sofia Laurent</div>
-            <div class="prof-handle">@sofia.lucid &bull; Since 2025</div>
+            <div class="prof-handle">@sofia.storyvibe &bull; Since 2025</div>
         </div>
         <div class="prof-stats">
             <div class="ps-card"><div class="ps-val">29</div><div class="ps-label">Stories</div></div>
@@ -469,10 +507,10 @@
         <div class="premium-cta-card">
             <div class="pcc-glow"></div>
             <div class="pcc-body">
-                <div class="pcc-badge">Lucid+</div>
+                <div class="pcc-badge">StoryVibe+</div>
                 <div class="pcc-title">Go Premium</div>
                 <div class="pcc-desc">All voices, exclusive stories, ad-free</div>
-                <button class="pcc-btn">Upgrade</button>
+                <button class="pcc-btn" onclick="openPaywall()">Upgrade</button>
             </div>
         </div>
 
@@ -487,7 +525,7 @@
             <div class="sb-row"><div class="sb-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div class="sb-text"><div class="sb-name">Email</div><div class="sb-val">sofia.l@email.com</div></div><svg class="sb-chev" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
             <div class="sb-row"><div class="sb-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="sb-text"><div class="sb-name">Subscription</div><div class="sb-val">Free plan</div></div><svg class="sb-chev" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
         </div>
-        <div class="app-footer">LucidFM v1.0 &bull; Dream louder</div>
+        <div class="app-footer">StoryVibe v1.0 &bull; Dream louder</div>
     </div>
 
 
@@ -632,6 +670,87 @@
 
 
     <!-- ╔══════════════════════════════════════╗
+         ║        PAYWALL                       ║
+         ╚══════════════════════════════════════╝ -->
+    <div id="paywall" class="paywall">
+        <div class="paywall-bg">
+            <div class="paywall-stars"></div>
+        </div>
+        <div class="paywall-content">
+            <header class="paywall-topbar">
+                <div class="paywall-topbar-left">
+                    <button type="button" class="paywall-close" onclick="closePaywall()" aria-label="Close">
+                        <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    </button>
+                    <button type="button" class="paywall-cancel" onclick="closePaywall()">Cancel</button>
+                </div>
+                <button type="button" class="paywall-restore" onclick="event.preventDefault(); closePaywall();">Restore</button>
+            </header>
+            <div class="paywall-hero">
+                <div class="paywall-icon-wrap">
+                    <svg class="paywall-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M9 18V5l12-2v13M9 9l12-2"/>
+                    </svg>
+                </div>
+                <h1 class="paywall-title">Get Full Access</h1>
+                <span class="paywall-badge">Premium Stories</span>
+            </div>
+            <ul class="paywall-features paywall-features-compact">
+                <li class="paywall-feature">
+                    <span class="pw-f-icon pw-f-rocket"><svg viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22 22 0 0 1-3.95 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></span>
+                    <div class="pw-f-text"><strong>Unlimited</strong><span>All stories</span></div>
+                </li>
+                <li class="paywall-feature">
+                    <span class="pw-f-icon pw-f-doc"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>
+                    <div class="pw-f-text"><strong>Download</strong><span>Offline</span></div>
+                </li>
+                <li class="paywall-feature">
+                    <span class="pw-f-icon pw-f-cd"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="2"/></svg></span>
+                    <div class="pw-f-text"><strong>Ad‑free</strong><span>No ads</span></div>
+                </li>
+                <li class="paywall-feature">
+                    <span class="pw-f-icon pw-f-mic"><svg viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></span>
+                    <div class="pw-f-text"><strong>Voices</strong><span>Premium</span></div>
+                </li>
+            </ul>
+            <div class="paywall-plans">
+                <label class="paywall-plan selected">
+                    <input type="radio" name="paywall-plan" value="yearly" checked>
+                    <span class="paywall-plan-radio"></span>
+                    <div class="paywall-plan-left">
+                        <span class="paywall-plan-meta">100+ stories / month</span>
+                        <span class="paywall-plan-price">$49.99 / year</span>
+                    </div>
+                    <span class="paywall-plan-right">$0.96 per week</span>
+                    <span class="paywall-plan-badge">Save 90%</span>
+                </label>
+                <label class="paywall-plan">
+                    <input type="radio" name="paywall-plan" value="weekly">
+                    <span class="paywall-plan-radio"></span>
+                    <div class="paywall-plan-left">
+                        <span class="paywall-plan-meta">20 stories / week</span>
+                        <span class="paywall-plan-price">$7.99 / week</span>
+                    </div>
+                    <span class="paywall-plan-right">$7.99 per week</span>
+                </label>
+            </div>
+            <button type="button" class="paywall-cta" id="paywall-cta" onclick="subscribePaywall()">Continue</button>
+            <footer class="paywall-footer">
+                <div class="paywall-footer-left">
+                    <a href="#" class="paywall-link">Terms of Use</a>
+                    <span class="paywall-sep">|</span>
+                    <a href="#" class="paywall-link">Privacy Policy</a>
+                </div>
+                <div class="paywall-footer-right">
+                    <span class="paywall-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+                    <span>Cancel anytime</span>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+
+    <!-- ╔══════════════════════════════════════╗
          ║        MINI PLAYER                   ║
          ╚══════════════════════════════════════╝ -->
     <div class="mini" id="mini" onclick="openPlayer()">
@@ -724,7 +843,22 @@
       if(onbDotsEl){onbDotsEl.innerHTML='';onbSlides.forEach(function(_,i){var d=document.createElement('div');d.className='onb-dot'+(i===0?' active':'');onbDotsEl.appendChild(d);});}
       if(onbNextBtn)onbNextBtn.textContent=onbSlides.length>1?'Next':'Get started';
     }
+    /* Splash: hide after animation, then show onboarding */
+    (function(){
+        var splash = document.getElementById('splash');
+        if (!splash) return;
+        var splashDuration = 2800;
+        setTimeout(function(){
+            splash.classList.add('hidden');
+            setTimeout(function(){ splash.style.display = 'none'; }, 500);
+        }, splashDuration);
+    })();
     initOnboarding();
+
+    function openPaywall(){document.getElementById('paywall').classList.add('open');document.body.classList.add('paywall-open');document.body.style.overflow='hidden';}
+    function closePaywall(){document.getElementById('paywall').classList.remove('open');document.body.classList.remove('paywall-open');document.body.style.overflow='';}
+    function subscribePaywall(){var plan=document.querySelector('input[name="paywall-plan"]:checked');if(plan){}closePaywall();}
+    (function(){var plans=document.querySelectorAll('.paywall-plan');plans.forEach(function(lab){lab.addEventListener('click',function(){document.querySelectorAll('.paywall-plan').forEach(function(p){p.classList.remove('selected');});lab.classList.add('selected');});});})();
 
     function openSearch(){document.querySelectorAll('.screen').forEach(e=>e.classList.remove('active'));document.getElementById('screen-search').classList.add('active');document.querySelectorAll('.bnav-tab').forEach(n=>n.classList.remove('active'));document.getElementById('search-input').value='';document.getElementById('search-results-label').textContent='Browse Vibes';document.getElementById('search-browse-vibes').style.display='block';document.getElementById('search-results-grid').style.display='none';document.getElementById('search-results-empty').style.display='none';setTimeout(()=>document.getElementById('search-input').focus(),100);}
     function closeSearch(){navigateTo('explore');}
